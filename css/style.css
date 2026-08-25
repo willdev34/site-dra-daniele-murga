@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   DESIGN TOKENS - Dra. Daniele Murga
+   Valores de cor abaixo sao aproximados, ajustar com hex exato do Figma
+   ========================================================================== */
+
+:root {
+  /* Paleta */
+  --color-ivory: #F5F5F5;      /* primary - base da interface */
+  --color-warm-sand: #E8DED3;  /* secondary - blocos e destaque */
+  --color-taupe: #B8A99B;      /* accent - detalhes e linhas */
+  --color-espresso: #302A27;   /* dark - texto principal */
+  --color-stone: #D5CEC6;      /* neutral - bordas e divisores */
+  --color-charcoal: #302A27;   /* CTA background */
+
+  /* Tipografia */
+  --font-title: 'Cormorant Garamond', serif;
+  --font-body: 'Manrope', sans-serif;
+
+  --size-h1-desktop: 72px;
+  --size-h1-mobile: 48px;
+  --size-h2: 44px;
+  --size-h3: 24px;
+  --size-body: 16px;
+  --line-height-body: 1.5;
+
+  /* Componentes */
+  --radius-button: 999px;
+  --button-height: 50px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-espresso);
+  background-color: var(--color-ivory);
+  line-height: var(--line-height-body);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(34px, 5vw, 58px);
+}
+
+h2 {
+  font-size: var(--size-h2);
+}
+
+h3 {
+  font-size: var(--size-h3);
+}
+
+.btn {
+  display: inline-block;
+  border-radius: var(--radius-button);
+  height: var(--button-height);
+  padding: 0 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+.btn-primary {
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+  border: none;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-espresso);
+  border: 1px solid var(--color-espresso);
+}
+
+/* ==========================================================================
+   LAYOUT BASE
+   ========================================================================== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-warm-sand);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.logo {
+  font-family: var(--font-title);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-espresso);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.main-nav {
+  display: none;
+  gap: 32px;
+}
+
+.main-nav a {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-espresso);
+  text-decoration: none;
+}
+
+@media (min-width: 900px) {
+  .main-nav {
+    display: flex;
+  }
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.hero {
+  background-color: var(--color-ivory);
+  background-image: linear-gradient(rgba(245, 245, 245, 0.6), rgba(245, 245, 245, 0.6)), url('https://res.cloudinary.com/do0uq7w4n/image/upload/v1787638354/background_hero_w2uja0.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+@media (min-width: 900px) {
+  .hero-inner {
+    flex-direction: row;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(48, 42, 39, 0.08);
+  color: var(--color-espresso);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.hero-content h1 {
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  font-size: 17px;
+  max-width: 440px;
+  margin-bottom: 32px;
+  color: var(--color-espresso);
+  opacity: 0.85;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero-photo {
+  position: relative;
+  flex: 1;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.badge-float {
+  position: absolute;
+  top: 24px;
+  right: -16px;
+  background-color: var(--color-ivory);
+  color: var(--color-espresso);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 8px 18px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.hero-credentials {
+  background-color: var(--color-warm-sand);
+  padding: 18px 0;
+}
+
+.credentials-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--color-espresso);
+}
+
+@media (min-width: 700px) {
+  .credentials-inner {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+/* ==========================================================================
+   BOTOES - refinamento de hover (troca de cores)
+   ========================================================================== */
+
+.btn-primary:hover {
+  background-color: var(--color-taupe);
+  color: var(--color-espresso);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-espresso);
+  color: var(--color-ivory);
+  border-color: var(--color-espresso);
+}
+
+/* ==========================================================================
+   INTRO
+   ========================================================================== */
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
+}
+
+.intro-photo {
+  height: 340px;
+}
+
+@media (min-width: 900px) {
+  .intro {
+    flex-direction: row;
+    align-items: stretch;
+    margin-top: 64px;
+  }
+
+  .intro-photo {
+    height: auto;
+  }
+}
+
+.intro-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.intro-text {
+  flex: 1;
+  background-color: var(--color-warm-sand);
+  padding: 48px 24px;
+}
+
+@media (min-width: 900px) {
+  .intro-text {
+    padding: 64px 80px;
+  }
+}
+
+.intro-text h2 {
+  margin-bottom: 20px;
+}
+
+.intro-text p {
+  font-size: 16px;
+  max-width: 460px;
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   TREATMENTS
+   ========================================================================== */
+
+.treatments {
+  background-color: var(--color-stone);
+  padding: 64px 0;
+  text-align: center;
+}
+
+.badge-center {
+  display: block;
+}
+
+.section-title {
+  margin-bottom: 48px;
+}
+
+.treatments-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  text-align: left;
+}
+
+@media (min-width: 700px) {
+  .treatments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.treatment-card {
+  background-color: var(--color-ivory);
+  border-radius: 8px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.treatment-card:hover {
+  background-color: var(--color-warm-sand);
+}
+
+.treatment-card h3 {
+  font-size: 22px;
+}
+
+.treatment-card p {
+  font-size: 14px;
+  opacity: 0.75;
+  margin-bottom: 12px;
+}
+
+.btn-small {
+  height: 40px;
+  padding: 0 20px;
+  font-size: 13px;
+  align-self: flex-start;
+}
+
+/* ==========================================================================
+   BIO
+   ========================================================================== */
+
+.bio {
+  background-color: var(--color-warm-sand);
+  padding: 64px 0;
+}
+
+.bio-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 900px) {
+  .bio-inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+  }
+}
+
+.bio-photo {
+  flex: 1;
+}
+
+.bio-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.bio-text {
+  flex: 1;
+}
+
+.bio-text h2 {
+  margin-bottom: 20px;
+}
+
+.bio-text p {
+  font-size: 16px;
+  opacity: 0.85;
+  margin-bottom: 28px;
+}
+
+/* ==========================================================================
+   WHY (Precisao, Naturalidade, Acompanhamento)
+   ========================================================================== */
+
+.why {
+  background-color: var(--color-ivory);
+  padding: 64px 0;
+  text-align: center;
+}
+
+.section-title-center {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 700px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-card-acompanhamento {
+    grid-column: span 2;
+  }
+}
+
+.why-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.why-card-acompanhamento {
+  aspect-ratio: 16 / 7;
+}
+
+.why-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.why-overlay {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  background-color: rgba(245, 245, 245, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 6px;
+  padding: 16px 20px;
+  text-align: left;
+}
+
+.why-overlay h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+  color: var(--color-espresso);
+}
+
+.why-overlay p {
+  font-size: 13px;
+  color: var(--color-espresso);
+  opacity: 0.8;
+}
+
+/* LOGO - ajuste de tamanho (sobrescreve qualquer regra anterior) */
+.header-inner .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header-inner .logo img {
+  height: 57px;
+  width: auto;
+  max-height: 57px;
+  display: block;
+}
