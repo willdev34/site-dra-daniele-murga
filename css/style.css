@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap');
 
 /* ==========================================================================
    DESIGN TOKENS - Dra. Daniele Murga
@@ -7,7 +7,7 @@
 
 :root {
   /* Paleta */
-  --color-ivory: #F5F5F5;      /* primary - base da interface */
+  --color-ivory: #F7F4EF;      /* primary - base da interface */
   --color-warm-sand: #E8DED3;  /* secondary - blocos e destaque */
   --color-taupe: #B8A99B;      /* accent - detalhes e linhas */
   --color-espresso: #302A27;   /* dark - texto principal */
@@ -15,7 +15,7 @@
   --color-charcoal: #302A27;   /* CTA background */
 
   /* Tipografia */
-  --font-title: 'Cormorant Garamond', serif;
+  --font-title: 'Playfair Display', serif;
   --font-body: 'Manrope', sans-serif;
 
   --size-h1-desktop: 72px;
@@ -299,7 +299,7 @@ h3 {
   }
 
   .intro-photo {
-    height: auto;
+    height: 600px;
   }
 }
 
@@ -654,4 +654,383 @@ h3 {
 .testimonials .container {
   position: relative;
   z-index: 1;
+}
+
+
+/* ==========================================================================
+   RESULTS (antes e depois)
+   ========================================================================== */
+
+.results {
+  padding: 64px 0;
+}
+
+.result-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+@media (min-width: 900px) {
+  .result-row {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.result-photo {
+  position: relative;
+  flex: 1.1;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.result-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.result-badge {
+  position: absolute;
+  bottom: 10%;
+  transform: translateX(-50%);
+  background-color: rgba(162, 145, 130, 0.2);
+  border: 1px solid var(--color-stone);
+  border-radius: 999px;
+  color: var(--color-espresso);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px 24px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.result-badge-left {
+  left: 25%;
+}
+
+.result-badge-right {
+  left: 75%;
+}
+
+.result-text {
+  flex: 1;
+  background-color: var(--color-warm-sand);
+  border: 1px solid var(--color-stone);
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result-text h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.result-text p {
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.result-disclaimer {
+  display: block;
+  font-size: 13px;
+  opacity: 0.6;
+  margin-top: 16px;
+}
+
+.result-photo-pair {
+  display: flex;
+  gap: 4px;
+  height: 100%;
+}
+
+.result-photo-pair img {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ==========================================================================
+   DIARY (Diario da Pele)
+   ========================================================================== */
+
+.diary {
+  padding: 64px 0;
+  text-align: center;
+}
+
+.diary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 48px;
+  text-align: left;
+}
+
+@media (min-width: 900px) {
+  .diary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .diary-card-melasma {
+    grid-row: 1 / 3;
+  }
+
+  .diary-card-prevencao {
+    grid-column: 1 / 3;
+  }
+}
+
+.diary-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.diary-card-melasma {
+  aspect-ratio: 622 / 825;
+}
+
+.diary-card-skincare {
+  aspect-ratio: 622 / 411;
+}
+
+.diary-card-procedimentos {
+  aspect-ratio: 622 / 380;
+}
+
+.diary-card-prevencao {
+  aspect-ratio: 1280 / 432;
+}
+
+.diary-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.diary-overlay {
+  position: absolute;
+  background-color: rgba(232, 222, 211, 0.7);
+  border-radius: 24px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+}
+
+.diary-overlay h3 {
+  font-size: 22px;
+  color: var(--color-espresso);
+}
+
+.diary-card-melasma .diary-overlay {
+  left: 4.2%;
+  right: 4.2%;
+  top: 76%;
+  bottom: 3.4%;
+}
+
+.diary-card-skincare .diary-overlay {
+  left: 4.2%;
+  right: 4.2%;
+  top: 51%;
+  bottom: 7%;
+}
+
+.diary-card-procedimentos .diary-overlay {
+  left: 4.2%;
+  right: 4.2%;
+  top: 48%;
+  bottom: 7%;
+}
+
+.diary-card-prevencao .diary-overlay {
+  left: 2%;
+  width: 44.5%;
+  top: 52.5%;
+  bottom: 8%;
+}
+
+
+
+/* ==========================================================================
+   CTA FINAL
+   ========================================================================== */
+
+.cta-final {
+  background-color: var(--color-ivory);
+  padding: 64px 0;
+}
+
+.cta-final-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 900px) {
+  .cta-final-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.cta-final-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cta-final-content {
+  background-color: var(--color-espresso);
+  padding: 110px 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cta-final-content h2 {
+  color: var(--color-ivory);
+  margin-bottom: 16px;
+}
+
+.cta-final-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  max-width: 380px;
+  margin-bottom: 28px;
+}
+
+.cta-final-bar {
+  background-color: var(--color-warm-sand);
+  padding: 14px 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--color-espresso);
+}
+
+.cta-final-photo {
+  flex: 1.1;
+}
+
+.cta-final-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: var(--color-ivory);
+  border: 1px solid var(--color-ivory);
+}
+
+.btn-outline-light:hover {
+  background-color: var(--color-ivory);
+  color: var(--color-espresso);
+}
+
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-espresso);
+  color: var(--color-ivory);
+  padding-top: 56px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 900px) {
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-logo {
+  height: 56px;
+  width: auto;
+}
+
+.footer-brand p {
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 900px) {
+  .footer-contact {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.footer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  background-color: var(--color-taupe);
+  border-radius: 999px;
+  color: var(--color-ivory);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-bottom a {
+  color: var(--color-ivory);
+  opacity: 0.7;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  opacity: 1;
 }
