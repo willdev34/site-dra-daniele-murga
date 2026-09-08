@@ -41,3 +41,9 @@ if (menuToggle && mainNav && menuOverlay) {
     if (window.innerWidth >= 900) fecharMenu();
   });
 }
+
+// Atualiza o ano do copyright automaticamente
+const anoAtual = document.getElementById('ano-atual');
+if (anoAtual) {
+  anoAtual.textContent = new Date().getFullYear();
+}
