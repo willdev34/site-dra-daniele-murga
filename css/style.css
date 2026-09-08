@@ -382,8 +382,8 @@ body.menu-open {
 
 .badge-float {
   position: absolute;
-  top: 6%;
-  left: 24px;
+  top: 24px;
+  left: -16px;
   background-color: var(--color-taupe);
   color: var(--color-espresso);
   font-size: 12px;
@@ -391,6 +391,7 @@ body.menu-open {
   letter-spacing: 0.05em;
   padding: 8px 18px;
   border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
 
 .hero-credentials {
