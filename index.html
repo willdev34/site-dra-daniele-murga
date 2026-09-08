@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dra. Daniele Murga | Dermatologia e Estética</title>
   <meta name="description" content="Dermatologia personalizada com a Dra. Daniele Murga em Campo Grande, RJ. Cuidado com a saude, beleza e qualidade da pele em todas as fases da vida.">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
 
@@ -13,15 +13,24 @@
     <div class="container header-inner">
       <a href="#" class="logo"><img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788830487/logo_menu_jidopr.png" alt="Dra. Daniele Murga"></a>
 
-      <nav class="main-nav">
+      <nav class="main-nav" id="main-nav">
         <a href="#tratamentos">Tratamentos</a>
         <a href="#sobre">A Dra. Daniele</a>
         <a href="#resultados">Resultados</a>
         <a href="#conteudos">Conteudos</a>
+        <a href="#agendar" class="btn btn-primary nav-cta">Agendar Consulta</a>
       </nav>
 
-      <a href="#agendar" class="btn btn-primary">Agendar Consulta</a>
+      <a href="#agendar" class="btn btn-primary header-cta-desktop">Agendar Consulta</a>
+
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
     </div>
+
+    <div class="menu-overlay" id="menu-overlay"></div>
   </header>
 
   <section class="hero">
@@ -358,5 +367,7 @@
       <a href="#">Pol&iacute;tica de Privacidade</a>
     </div>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

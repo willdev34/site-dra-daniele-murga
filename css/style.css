@@ -36,11 +36,18 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   font-family: var(--font-body);
   color: var(--color-espresso);
   background-color: var(--color-ivory);
   line-height: var(--line-height-body);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 h1, h2, h3 {
@@ -111,9 +118,16 @@ h3 {
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-color: rgba(232, 222, 211, 0.4);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  z-index: -1;
 }
 
 .header-inner {
@@ -122,6 +136,8 @@ h3 {
   justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 20px;
+  gap: 16px;
+  position: relative;
 }
 
 .logo {
@@ -131,11 +147,6 @@ h3 {
   color: var(--color-espresso);
   text-decoration: none;
   letter-spacing: 0.02em;
-}
-
-.main-nav {
-  display: none;
-  gap: 32px;
 }
 
 .main-nav a {
@@ -148,9 +159,137 @@ h3 {
   text-decoration: none;
 }
 
+/* ---- Menu mobile (off-canvas) ---- */
+
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(80vw, 320px);
+  background-color: var(--color-ivory);
+  padding: 96px 32px 32px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 200;
+  box-shadow: -12px 0 32px rgba(48, 42, 39, 0.12);
+}
+
+.main-nav.is-active {
+  transform: translateX(0);
+}
+
+.main-nav a {
+  width: 100%;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-stone);
+}
+
+.main-nav .nav-cta {
+  margin-top: 20px;
+  width: 100%;
+  border: none;
+  justify-content: center;
+  color: var(--color-ivory);
+}
+
+.menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(48, 42, 39, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 190;
+}
+
+.menu-overlay.is-active {
+  display: block;
+  opacity: 1;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 210;
+  flex-shrink: 0;
+}
+
+.menu-toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-espresso);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle.is-active .menu-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.is-active .menu-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-active .menu-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 @media (min-width: 900px) {
   .main-nav {
-    display: flex;
+    position: static;
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    transform: none;
+    transition: none;
+  }
+
+  .main-nav a {
+    width: auto;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .main-nav .nav-cta {
+    display: none;
+  }
+
+  .menu-overlay {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .header-cta-desktop {
+    display: none;
   }
 }
 
@@ -373,9 +512,31 @@ h3 {
 
 @media (max-width: 700px) {
   .treatment-row {
-    grid-template-columns: 1fr;
-    justify-items: start;
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .treatment-row-left,
+  .treatment-tags,
+  .treatment-explore {
+    grid-column: auto;
+  }
+
+  .treatment-row-left h3 {
+    font-size: clamp(22px, 6vw, 28px);
+    white-space: normal;
+  }
+
+  .treatment-tags {
+    text-align: left;
+  }
+
+  .treatment-explore {
+    align-self: flex-start;
   }
 }
 
@@ -581,6 +742,17 @@ h3 {
 
 .why-card-acompanhamento img {
   object-position: center 15%;
+}
+
+@media (max-width: 699px) {
+  .why-card-acompanhamento {
+    aspect-ratio: 5 / 4;
+  }
+
+  .why-card-acompanhamento .why-overlay {
+    left: 4.2%;
+    right: 4.2%;
+  }
 }
 
 /* LOGO - ajuste de tamanho (sobrescreve qualquer regra anterior) */
@@ -901,6 +1073,20 @@ h3 {
   width: 44.5%;
   top: 52.5%;
   bottom: 8%;
+}
+
+@media (max-width: 899px) {
+  .diary-card-prevencao {
+    aspect-ratio: 622 / 411;
+  }
+
+  .diary-card-prevencao .diary-overlay {
+    left: 4.2%;
+    right: 4.2%;
+    width: auto;
+    top: 51%;
+    bottom: 7%;
+  }
 }
 
 
