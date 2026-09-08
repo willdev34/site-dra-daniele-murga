@@ -170,7 +170,7 @@ h3 {
   flex-direction: column;
   gap: 40px;
   padding-top: 48px;
-  padding-bottom: 48px;
+  padding-bottom: 0;
 }
 
 @media (min-width: 900px) {
@@ -178,7 +178,7 @@ h3 {
     flex-direction: row;
     align-items: center;
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 0;
   }
 }
 
@@ -233,16 +233,15 @@ h3 {
 
 .badge-float {
   position: absolute;
-  top: 24px;
-  left: -16px;
-  background-color: var(--color-ivory);
+  top: 72%;
+  left: 24px;
+  background-color: var(--color-taupe);
   color: var(--color-espresso);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.05em;
   padding: 8px 18px;
   border-radius: 999px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
 
 .hero-credentials {
@@ -266,21 +265,6 @@ h3 {
     justify-content: center;
     gap: 48px;
   }
-}
-
-/* ==========================================================================
-   BOTOES - refinamento de hover (troca de cores)
-   ========================================================================== */
-
-.btn-primary:hover {
-  background-color: var(--color-taupe);
-  color: var(--color-espresso);
-}
-
-.btn-secondary:hover {
-  background-color: var(--color-espresso);
-  color: var(--color-ivory);
-  border-color: var(--color-espresso);
 }
 
 /* ==========================================================================
@@ -369,7 +353,8 @@ h3 {
   background-color: var(--color-ivory);
   border: 1px solid var(--color-stone);
   border-radius: 16px;
-  padding: 17px 20px;
+  padding: 0 36px;
+  height: 140px;
   transition: background-color 0.2s ease;
   width: 100%;
 }
@@ -884,8 +869,10 @@ h3 {
 }
 
 .diary-overlay h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
   font-size: 22px;
-  color: var(--color-espresso);
+  color: #000000;
 }
 
 .diary-card-melasma .diary-overlay {
@@ -918,41 +905,43 @@ h3 {
 
 
 
+
+
+
 /* ==========================================================================
    CTA FINAL
    ========================================================================== */
 
 .cta-final {
-  background-color: var(--color-ivory);
   padding: 64px 0;
 }
 
-.cta-final-inner {
+.cta-final-card {
+  background-color: var(--color-espresso);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.cta-final-top {
   display: flex;
   flex-direction: column;
+  gap: 32px;
+  padding: 48px;
 }
 
 @media (min-width: 900px) {
-  .cta-final-inner {
+  .cta-final-top {
     flex-direction: row;
     align-items: center;
   }
 }
 
-.cta-final-left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
 .cta-final-content {
-  background-color: var(--color-espresso);
-  padding: 110px 40px;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 24px 0 0 0;
+  align-items: flex-start;
 }
 
 .cta-final-content h2 {
@@ -967,6 +956,17 @@ h3 {
   margin-bottom: 28px;
 }
 
+.cta-final-photo {
+  flex: 0.85;
+}
+
+.cta-final-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
 .cta-final-bar {
   background-color: var(--color-warm-sand);
   padding: 14px 0;
@@ -975,29 +975,12 @@ h3 {
   font-weight: 600;
   letter-spacing: 0.03em;
   color: var(--color-espresso);
-  border-radius: 0 0 0 24px;
-}
-
-.cta-final-photo {
-  flex: 1.1;
-}
-
-.cta-final-photo img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0 24px 24px 0;
 }
 
 .btn-outline-light {
   background-color: transparent;
   color: var(--color-ivory);
   border: 1px solid var(--color-ivory);
-}
-
-.btn-outline-light:hover {
-  background-color: var(--color-ivory);
-  color: var(--color-espresso);
 }
 
 
@@ -1029,12 +1012,12 @@ h3 {
 .footer-brand {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
 }
 
 .footer-logo {
-  height: 56px;
+  height: 110px;
   width: auto;
 }
 
@@ -1063,6 +1046,26 @@ h3 {
   font-size: 14px;
 }
 
+.footer-map {
+  flex: 1;
+  min-width: 260px;
+  max-width: 320px;
+}
+
+.footer-map iframe {
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.footer-map-address {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
 .footer-icon {
   display: flex;
   align-items: center;
@@ -1072,7 +1075,7 @@ h3 {
   flex-shrink: 0;
   background-color: var(--color-taupe);
   border-radius: 999px;
-  color: var(--color-ivory);
+  color: var(--color-espresso);
 }
 
 .footer-bottom {
