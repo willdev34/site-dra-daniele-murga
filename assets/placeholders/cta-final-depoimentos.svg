@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 860" role="img" aria-labelledby="title">
+  <title id="title">Ilustração representando experiências e depoimentos</title>
+  <defs>
+    <linearGradient id="bgC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8DED3"/>
+      <stop offset="100%" stop-color="#B8A99B"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="860" fill="url(#bgC)"/>
+  <path d="M240 340 h220 a30 30 0 0 1 30 30 v160 a30 30 0 0 1 -30 30 h-150 l-60 60 v-60 h-10 a30 30 0 0 1 -30 -30 v-160 a30 30 0 0 1 30 -30 Z" fill="none" stroke="#302A27" stroke-opacity="0.3" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="310" cy="435" r="8" fill="#302A27" fill-opacity="0.4"/>
+  <circle cx="370" cy="435" r="8" fill="#302A27" fill-opacity="0.4"/>
+  <circle cx="430" cy="435" r="8" fill="#302A27" fill-opacity="0.4"/>
+</svg>

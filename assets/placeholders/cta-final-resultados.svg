@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 860" role="img" aria-labelledby="title">
+  <title id="title">Ilustração representando um comparativo de resultados</title>
+  <defs>
+    <linearGradient id="gC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8DED3"/>
+      <stop offset="100%" stop-color="#B8A99B"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="860" fill="url(#gC)"/>
+  <line x1="350" y1="60" x2="350" y2="800" stroke="#302A27" stroke-opacity="0.3" stroke-width="2"/>
+  <circle cx="350" cy="430" r="32" fill="#F7F4EF" stroke="#302A27" stroke-opacity="0.35" stroke-width="2"/>
+  <path d="M339 430 L328 421 L328 439 Z" fill="#302A27" fill-opacity="0.5"/>
+  <path d="M361 430 L372 421 L372 439 Z" fill="#302A27" fill-opacity="0.5"/>
+</svg>

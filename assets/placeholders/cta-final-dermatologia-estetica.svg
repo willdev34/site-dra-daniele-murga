@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 860" role="img" aria-labelledby="title">
+  <title id="title">Ilustração de cuidado dermatológico individualizado</title>
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8DED3"/>
+      <stop offset="100%" stop-color="#B8A99B"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="860" fill="url(#bgGrad2)"/>
+  <g stroke="#302A27" stroke-opacity="0.4" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M350 640 C 350 540, 350 440, 350 220"/>
+    <path d="M350 540 C 310 510, 275 480, 255 425 C 295 425, 335 455, 350 495"/>
+    <path d="M350 480 C 390 450, 425 420, 445 365 C 405 365, 370 395, 350 435"/>
+    <path d="M350 380 C 315 355, 285 325, 270 275 C 305 280, 335 310, 350 340"/>
+  </g>
+  <circle cx="350" cy="220" r="9" fill="#302A27" fill-opacity="0.45"/>
+</svg>

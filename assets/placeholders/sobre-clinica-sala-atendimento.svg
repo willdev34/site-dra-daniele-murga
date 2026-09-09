@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title">
+  <title id="title">Ilustração provisória da sala de atendimento da clínica</title>
+  <defs>
+    <linearGradient id="gs" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F4EF"/>
+      <stop offset="100%" stop-color="#E8DED3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#gs)"/>
+  <g fill="none" stroke="#302A27" stroke-opacity="0.32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M260 430 h300 a16 16 0 0 0 16 -16 v-24 a16 16 0 0 0 -16 -16 h-220 a40 40 0 0 0 -40 40 Z"/>
+    <path d="M300 430 v40 h280 v-40"/>
+    <line x1="300" y1="470" x2="290" y2="470"/>
+    <line x1="580" y1="470" x2="590" y2="470"/>
+  </g>
+  <circle cx="470" cy="330" r="30" fill="none" stroke="#B8A99B" stroke-opacity="0.55" stroke-width="2.5"/>
+  <line x1="470" y1="330" x2="470" y2="374" stroke="#B8A99B" stroke-opacity="0.55" stroke-width="2.5"/>
+</svg>

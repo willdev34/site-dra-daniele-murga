@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title">
+  <title id="title">Ilustração representando tratamentos a laser</title>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8DED3"/>
+      <stop offset="100%" stop-color="#F7F4EF"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <circle cx="400" cy="300" r="120" fill="none" stroke="#B8A99B" stroke-opacity="0.4" stroke-width="1.5"/>
+  <g stroke="#302A27" stroke-opacity="0.55" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="400" y1="234" x2="400" y2="400"/>
+    <line x1="400" y1="234" x2="340" y2="400"/>
+    <line x1="400" y1="234" x2="460" y2="400"/>
+    <line x1="400" y1="234" x2="300" y2="380"/>
+    <line x1="400" y1="234" x2="500" y2="380"/>
+  </g>
+  <circle cx="400" cy="222" r="14" fill="#302A27" fill-opacity="0.55"/>
+</svg>

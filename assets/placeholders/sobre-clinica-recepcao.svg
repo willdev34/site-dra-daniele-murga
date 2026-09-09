@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" role="img" aria-labelledby="title">
+  <title id="title">Ilustração provisória da recepção da clínica</title>
+  <defs>
+    <linearGradient id="gr" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F4EF"/>
+      <stop offset="100%" stop-color="#E8DED3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="900" fill="url(#gr)"/>
+  <g fill="none" stroke="#302A27" stroke-opacity="0.32" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M220 620 v-90 a40 40 0 0 1 40 -40 h280 a40 40 0 0 1 40 40 v90 Z"/>
+    <path d="M220 620 h360 v40 a20 20 0 0 1 -20 20 h-320 a20 20 0 0 1 -20 -20 Z"/>
+    <line x1="360" y1="500" x2="360" y2="620"/>
+    <line x1="440" y1="500" x2="440" y2="620"/>
+  </g>
+  <g stroke="#B8A99B" stroke-opacity="0.6" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M600 640 C 600 590, 600 550, 600 500"/>
+    <path d="M600 590 C 575 575, 555 555, 548 525 C 573 528, 593 548, 600 573"/>
+    <path d="M600 550 C 625 535, 645 515, 652 485 C 627 488, 607 508, 600 533"/>
+  </g>
+  <rect x="580" y="640" width="40" height="14" rx="4" fill="#B8A99B" fill-opacity="0.5"/>
+</svg>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depoimentos de Pacientes | Dra. Daniele Murga</title>
+  <meta name="description" content="Experi&ecirc;ncias reais de pacientes da Dra. Daniele Murga, dermatologista em Campo Grande, Rio de Janeiro: avalia&ccedil;&otilde;es no Google e depoimentos em v&iacute;deo sobre dermatologia, dermatologia est&eacute;tica e medicina integrativa.">
+  <link rel="stylesheet" href="css/style.css?v=21">
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788830487/logo_menu_jidopr.png" alt="Dra. Daniele Murga"></a>
+
+      <nav class="main-nav" id="main-nav">
+        <div class="nav-item has-dropdown">
+          <a href="index.html#tratamentos" class="nav-item-trigger">Tratamentos</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-inner">
+              <a href="dermatologia-estetica.html">Dermatologia Est&eacute;tica</a>
+              <a href="medicina-integrativa.html">Medicina Integrativa</a>
+            </div>
+          </div>
+        </div>
+        <a href="sobre-dra-daniele.html">A Dra. Daniele</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="depoimentos.html">Depoimentos</a>
+        <a href="sobre-clinica.html">Sobre a Cl&iacute;nica</a>
+        <a href="index.html#agendar" class="btn btn-primary nav-cta">Agendar Consulta</a>
+      </nav>
+
+      <a href="index.html#agendar" class="btn btn-primary header-cta-desktop">Agendar Consulta</a>
+
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+    </div>
+
+    <div class="menu-overlay" id="menu-overlay"></div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="badge">Experi&ecirc;ncias reais</span>
+        <h1>Quem passa por aqui tem<br>uma hist&oacute;ria para contar.</h1>
+        <p class="hero-text">
+          Mais do que resultados, cada paciente vive uma experi&ecirc;ncia &uacute;nica
+          de cuidado, acompanhamento e confian&ccedil;a.
+        </p>
+        <div class="hero-buttons">
+          <a href="index.html#agendar" class="btn btn-primary">Agendar consulta</a>
+          <a href="sobre-dra-daniele.html" class="btn btn-secondary">Conhe&ccedil;a a Dra. Daniele</a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="assets/placeholders/hero-depoimentos.svg" alt="Ilustra&ccedil;&atilde;o representando experi&ecirc;ncias e depoimentos">
+      </div>
+    </div>
+  </section>
+
+  <section class="google-section" id="avaliacoes-google">
+    <div class="container">
+      <span class="badge badge-center">Avalia&ccedil;&otilde;es Google</span>
+      <h2 class="section-title section-title-center">O que nossos pacientes dizem</h2>
+      <p class="lead-text">A confian&ccedil;a constru&iacute;da ao longo do tempo tamb&eacute;m aparece nas experi&ecirc;ncias compartilhadas por quem j&aacute; passou pela cl&iacute;nica.</p>
+
+      <div class="google-stat">
+        <span class="google-stat-number">4,7</span>
+        <span class="google-stat-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="google-stat-count">202 avalia&ccedil;&otilde;es no Google</span>
+      </div>
+
+      <div class="google-marquee" id="google-marquee">
+        <div class="google-marquee-track" id="google-marquee-track"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-transition">
+    <div class="container">
+      <span class="badge badge-center">Depoimentos em v&iacute;deo</span>
+      <h2 class="section-title section-title-center">Experi&ecirc;ncias que merecem ser ouvidas</h2>
+      <p>Algumas hist&oacute;rias n&atilde;o cabem em poucas palavras. Por isso, reunimos relatos de pacientes que compartilharam sua experi&ecirc;ncia durante o tratamento.</p>
+    </div>
+  </section>
+
+  <section class="video-section" id="depoimentos-video">
+    <div class="container">
+      <div class="results-filters" id="video-filters" role="group" aria-label="Filtrar depoimentos por &aacute;rea"></div>
+
+      <div class="video-carousel-wrap">
+        <button type="button" class="video-nav-btn" id="video-prev" aria-label="Depoimento anterior">&larr;</button>
+        <div class="video-track" id="video-track" tabindex="0" aria-label="Carrossel de depoimentos em v&iacute;deo"></div>
+        <button type="button" class="video-nav-btn" id="video-next" aria-label="Pr&oacute;ximo depoimento">&rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-feature" id="destaque">
+    <div class="container video-feature-inner">
+      <button type="button" class="video-card-trigger video-feature-poster" id="feature-video-trigger" aria-label="Assistir depoimento em destaque">
+        <img src="assets/placeholders/video-poster-placeholder.svg" alt="Depoimento em v&iacute;deo em destaque">
+        <span class="video-play-btn" aria-hidden="true">
+          <svg width="20" height="22" viewBox="0 0 20 22" fill="currentColor"><path d="M0 0 L20 11 L0 22 Z"/></svg>
+        </span>
+      </button>
+      <div class="video-feature-text">
+        <span class="badge">Nota editorial</span>
+        <h2>Cada pele tem uma hist&oacute;ria.<br>E cada tratamento precisa respeitar essa hist&oacute;ria.</h2>
+        <p>Ao lado, um relato real sobre como o acompanhamento com a Dra. Daniele come&ccedil;a pela escuta e pela investiga&ccedil;&atilde;o cuidadosa de cada caso.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container">
+      <div class="cta-final-card">
+        <div class="cta-final-top">
+          <div class="cta-final-content">
+            <h2>Talvez a sua hist&oacute;ria comece aqui.</h2>
+            <p>Agende uma consulta e descubra um plano de cuidado pensado para voc&ecirc;.</p>
+            <a href="index.html#agendar" class="btn btn-outline-light">Agendar consulta</a>
+          </div>
+          <div class="cta-final-photo">
+            <img src="assets/placeholders/cta-final-depoimentos.svg" alt="Ilustra&ccedil;&atilde;o representando experi&ecirc;ncias e depoimentos">
+          </div>
+        </div>
+        <div class="cta-final-bar">
+          <span>Atendimento presencial &middot; Rio de Janeiro</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788834156/logo_footer_sem_fundo_anwpiz.png" alt="Dra. Daniele Murga" class="footer-logo">
+        <span class="badge">CRM &middot; RQE</span>
+      </div>
+
+      <div class="footer-contact">
+        <div class="footer-contact-item">
+          <span class="footer-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </span>
+          <span>@dra.danimurga</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.5 0-3-.4-4.3-1.1l-.3-.2-3.2.9.9-3.1-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.3-.4c.1-.1.2-.2.2-.4.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.4.5.2 1 .4 1.3.5.5.2 1 .1 1.4.1.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3z"/></svg>
+          </span>
+          <span>+55 21 98814-5834</span>
+        </div>
+        <div class="footer-map">
+          <iframe
+            src="https://www.google.com/maps?q=Av.+Maria+Teresa,+260,+Campo+Grande,+Rio+de+Janeiro+-+RJ,+23050-160&output=embed"
+            width="100%"
+            height="160"
+            style="border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localiza&ccedil;&atilde;o Dra. Daniele Murga">
+          </iframe>
+          <span class="footer-map-address">Av. Maria Teresa, 260, Ed. Unique &middot; Salas 614 e 615</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copyright">&copy; <span id="ano-atual">2026</span> Dra. Daniele Murga. Todos os direitos reservados.</span>
+      <a href="politica-privacidade.html">Pol&iacute;tica de Privacidade</a>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="video-lightbox">
+    <div class="lightbox-content lightbox-content--video">
+      <button type="button" class="lightbox-close" id="video-lightbox-close" aria-label="Fechar">&times;</button>
+      <div class="lightbox-video" id="lightbox-video"></div>
+      <div class="lightbox-body">
+        <span class="lightbox-meta" id="video-lightbox-meta"></span>
+        <h3 id="video-lightbox-title"></h3>
+      </div>
+      <div class="lightbox-nav">
+        <button type="button" id="video-lightbox-prev">&larr; Anterior</button>
+        <button type="button" id="video-lightbox-next">Pr&oacute;ximo &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

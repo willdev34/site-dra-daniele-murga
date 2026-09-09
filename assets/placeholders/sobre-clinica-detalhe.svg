@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 340" role="img" aria-labelledby="title">
+  <title id="title">Ilustração provisória de um detalhe do ambiente da clínica</title>
+  <defs>
+    <linearGradient id="gd" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8DED3"/>
+      <stop offset="100%" stop-color="#F1EAE1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="340" fill="url(#gd)"/>
+  <g fill="none" stroke="#302A27" stroke-opacity="0.3" stroke-width="2.5" stroke-linecap="round">
+    <path d="M520 260 C 520 200, 520 150, 520 90"/>
+    <path d="M520 220 C 480 205, 448 180, 434 140 C 474 144, 508 172, 520 208"/>
+    <path d="M520 170 C 560 152, 592 124, 604 84 C 564 90, 532 120, 520 158"/>
+    <path d="M520 260 C 690 240, 760 220, 760 180"/>
+  </g>
+  <circle cx="520" cy="90" r="7" fill="#B8A99B" fill-opacity="0.6"/>
+</svg>

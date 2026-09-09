@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 960" role="img" aria-labelledby="title">
+  <title id="title">Ilustração representando um comparativo de resultados</title>
+  <defs>
+    <linearGradient id="gA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F4EF"/>
+      <stop offset="100%" stop-color="#F1EAE1"/>
+    </linearGradient>
+    <linearGradient id="gB" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8DED3"/>
+      <stop offset="100%" stop-color="#DCCFC0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="960" fill="url(#gA)"/>
+  <path d="M0 0 L800 0 L800 960 L460 960 Z" fill="url(#gB)"/>
+  <line x1="430" y1="0" x2="430" y2="960" stroke="#302A27" stroke-opacity="0.25" stroke-width="2"/>
+  <circle cx="430" cy="480" r="34" fill="#F7F4EF" stroke="#302A27" stroke-opacity="0.35" stroke-width="2"/>
+  <path d="M418 480 L406 470 L406 490 Z" fill="#302A27" fill-opacity="0.5"/>
+  <path d="M442 480 L454 470 L454 490 Z" fill="#302A27" fill-opacity="0.5"/>
+</svg>
