@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre a Cl&iacute;nica | Dra. Daniele Murga</title>
   <meta name="description" content="Conhe&ccedil;a a cl&iacute;nica da Dra. Daniele Murga em Campo Grande, Rio de Janeiro: um ambiente moderno, sofisticado e acolhedor, pensado para o conforto e a tranquilidade do seu atendimento.">
-  <link rel="stylesheet" href="css/style.css?v=21">
+  <link rel="stylesheet" href="css/style.css?v=27">
 </head>
 <body>
 
@@ -14,11 +14,13 @@
       <a href="index.html" class="logo"><img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788830487/logo_menu_jidopr.png" alt="Dra. Daniele Murga"></a>
 
       <nav class="main-nav" id="main-nav">
+        <a href="index.html">In&iacute;cio</a>
         <div class="nav-item has-dropdown">
           <a href="index.html#tratamentos" class="nav-item-trigger">Tratamentos</a>
           <div class="nav-dropdown">
             <div class="nav-dropdown-inner">
               <a href="dermatologia-estetica.html">Dermatologia Est&eacute;tica</a>
+              <a href="medicina-clinica.html">Dermatologia Cl&iacute;nica</a>
               <a href="medicina-integrativa.html">Medicina Integrativa</a>
             </div>
           </div>
@@ -88,8 +90,14 @@
       <h2 class="section-title section-title-center">Um ambiente feito<br>para receber voc&ecirc;.</h2>
 
       <div class="space-grid">
-        <div class="space-item space-item-recepcao">
-          <img src="assets/placeholders/sobre-clinica-recepcao.svg" alt="Ilustra&ccedil;&atilde;o provis&oacute;ria da recep&ccedil;&atilde;o da cl&iacute;nica &mdash; substituir por fotografia oficial quando dispon&iacute;vel">
+        <div class="space-item space-item-recepcao space-video" id="space-video">
+          <div class="space-video-media">
+            <img src="assets/placeholders/sobre-clinica-recepcao.svg" alt="Poster provis&oacute;rio do v&iacute;deo do espa&ccedil;o da cl&iacute;nica">
+          </div>
+          <span class="space-video-pending">V&iacute;deo em breve</span>
+          <button type="button" class="space-video-play-btn" id="space-video-trigger" aria-label="Reproduzir v&iacute;deo do espa&ccedil;o da cl&iacute;nica">
+            <svg width="22" height="24" viewBox="0 0 20 22" fill="currentColor"><path d="M0 0 L20 11 L0 22 Z"/></svg>
+          </button>
         </div>
         <div class="space-item space-item-consultorio">
           <img src="assets/placeholders/sobre-clinica-consultorio.svg" alt="Ilustra&ccedil;&atilde;o provis&oacute;ria do consult&oacute;rio &mdash; substituir por fotografia oficial quando dispon&iacute;vel">
@@ -174,21 +182,19 @@
   </section>
 
   <section class="cta-final">
-    <div class="container">
-      <div class="cta-final-card">
-        <div class="cta-final-top">
-          <div class="cta-final-content">
-            <h2>Seu cuidado come&ccedil;a no momento em que voc&ecirc; entra.</h2>
-            <p>Conhe&ccedil;a a cl&iacute;nica e agende sua consulta com a Dra. Daniele.</p>
-            <a href="index.html#agendar" class="btn btn-outline-light">Agendar consulta</a>
-          </div>
-          <div class="cta-final-photo">
-            <img src="assets/placeholders/cta-final-sobre-clinica.svg" alt="Ilustra&ccedil;&atilde;o provis&oacute;ria do espa&ccedil;o da cl&iacute;nica &mdash; substituir por fotografia oficial quando dispon&iacute;vel">
-          </div>
+    <div class="container-home">
+      <div class="cta-final-top">
+        <div class="cta-final-content">
+          <h2>Conhe&ccedil;a<br>nosso espa&ccedil;o.</h2>
+          <p>Agende sua consulta e venha viver essa experi&ecirc;ncia pessoalmente.</p>
+          <a href="index.html#agendar" class="btn btn-outline-light">Agendar consulta</a>
         </div>
-        <div class="cta-final-bar">
-          <span>Atendimento presencial &middot; Rio de Janeiro</span>
+        <div class="cta-final-photo">
+          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788411642/cta-final_ivzuqc.jpg" alt="Dra. Daniele Murga">
         </div>
+      </div>
+      <div class="cta-final-bar">
+        <span>Atendimento presencial &middot; Rio de Janeiro</span>
       </div>
     </div>
   </section>

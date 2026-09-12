@@ -42,6 +42,61 @@ if (menuToggle && mainNav && menuOverlay) {
   });
 }
 
+// Header: fixo no topo durante o scroll, com blur/opacidade que
+// aumentam a partir de .is-scrolled. Escopado a Home - nas demais
+// paginas o header permanece como esta hoje (position: sticky),
+// sem a classe .is-scrolled e sem a variavel de altura abaixo.
+const siteHeader = document.getElementById('site-header');
+
+if (siteHeader && document.body.classList.contains('page-home')) {
+  // O header vira position:fixed na Home, entao e removido do fluxo
+  // normal do documento; a altura medida aqui e usada para empurrar o
+  // Hero para baixo (via padding-top), evitando que o header cubra o
+  // inicio da pagina.
+  function atualizarAlturaHeader() {
+    document.documentElement.style.setProperty('--home-header-height', siteHeader.offsetHeight + 'px');
+  }
+
+  atualizarAlturaHeader();
+  window.addEventListener('resize', atualizarAlturaHeader);
+
+  if (window.ResizeObserver) {
+    new ResizeObserver(atualizarAlturaHeader).observe(siteHeader);
+  }
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      siteHeader.classList.add('is-scrolled');
+    } else {
+      siteHeader.classList.remove('is-scrolled');
+    }
+  }, { passive: true });
+}
+
+// Sobre a Clinica: bloco maior de "O espaco" preparado para receber um
+// video real do Instagram. Enquanto "video" nao existir, o botao de
+// play fica apenas visual (sem URL inventada); quando o arquivo for
+// definido, basta trocar a <img> por um elemento <video> com esse src
+// que a mesma logica de play/pause/overlay passa a funcionar.
+const spaceVideo = document.getElementById('space-video');
+
+if (spaceVideo) {
+  const spaceVideoTrigger = document.getElementById('space-video-trigger');
+  const spaceVideoEl = spaceVideo.querySelector('video');
+
+  if (spaceVideoTrigger && spaceVideoEl) {
+    spaceVideoTrigger.addEventListener('click', () => {
+      spaceVideoEl.play();
+    });
+    spaceVideoEl.addEventListener('play', () => spaceVideo.classList.add('is-playing'));
+    spaceVideoEl.addEventListener('pause', () => spaceVideo.classList.remove('is-playing'));
+    spaceVideoEl.addEventListener('ended', () => spaceVideo.classList.remove('is-playing'));
+    spaceVideoEl.addEventListener('click', () => {
+      if (spaceVideoEl.paused) spaceVideoEl.play(); else spaceVideoEl.pause();
+    });
+  }
+}
+
 // Atualiza o ano do copyright automaticamente
 const anoAtual = document.getElementById('ano-atual');
 if (anoAtual) {
@@ -370,6 +425,171 @@ if (resultsGrid) {
 
   renderizarFiltros();
   renderizarGaleria(casosVisiveis);
+}
+
+// ==========================================================================
+// Diario da Pele (carrossel de videos/reels, data-driven, com paginacao)
+// ==========================================================================
+//
+// Cada item representa um video vertical (reel do Instagram da Dra.
+// Daniele). Enquanto o arquivo de video real de um assunto nao estiver
+// disponivel, "video" fica null: o card mostra apenas o poster com um
+// aviso de "Vídeo em breve" e o botao de play nao faz nada. Assim que o
+// arquivo existir, basta preencher "video" (e "poster", se quiser trocar
+// a capa) - nenhuma outra parte do HTML/CSS precisa mudar.
+//
+// Para adicionar um novo assunto no futuro, inclua um novo objeto no
+// array abaixo; o carrossel e a paginacao se ajustam sozinhos.
+
+const DIARY_POSTS = [
+  {
+    id: 'rosacea',
+    title: 'Rosácea',
+    description: 'A escolha do protetor solar certo faz toda a diferença no tratamento da rosácea.',
+    video: null,
+    poster: 'assets/placeholders/video-poster-placeholder.svg'
+  },
+  {
+    id: 'mounjaro',
+    title: 'Mounjaro',
+    description: 'Como funciona, quando é indicado e por que o acompanhamento médico é essencial durante o uso.',
+    video: null,
+    poster: 'assets/placeholders/video-poster-placeholder.svg'
+  },
+  // ---- MOCK DATA: conteudos ficticios usados apenas para visualizar o
+  // carrossel/paginacao com mais de 2 itens. Remover quando os proximos
+  // Reels reais forem definidos e substituir por objetos no mesmo formato.
+  {
+    id: 'mock-melasma',
+    title: 'Melasma',
+    description: 'Cuidados que fazem diferença no tratamento e na rotina da pele.',
+    video: null,
+    poster: 'assets/placeholders/video-poster-placeholder.svg'
+  },
+  {
+    id: 'mock-protetor-solar',
+    title: 'Protetor solar',
+    description: 'Como escolher a proteção ideal para sua pele.',
+    video: null,
+    poster: 'assets/placeholders/video-poster-placeholder.svg'
+  },
+  {
+    id: 'mock-skincare',
+    title: 'Skincare',
+    description: 'Uma rotina simples pode transformar a saúde da sua pele.',
+    video: null,
+    poster: 'assets/placeholders/video-poster-placeholder.svg'
+  },
+  {
+    id: 'mock-preenchimento-facial',
+    title: 'Preenchimento facial',
+    description: 'Naturalidade e equilíbrio para valorizar seus traços.',
+    video: null,
+    poster: 'assets/placeholders/video-poster-placeholder.svg'
+  }
+];
+
+const DIARY_PLAY_ICON_SVG = '<svg width="20" height="22" viewBox="0 0 20 22" fill="currentColor"><path d="M0 0 L20 11 L0 22 Z"/></svg>';
+
+const diaryTrack = document.getElementById('diary-track');
+
+if (diaryTrack) {
+  const diaryDots = document.getElementById('diary-dots');
+
+  function itensPorPaginaDiario() {
+    return window.innerWidth >= 900 ? 2 : 1;
+  }
+
+  let itensPorPagina = itensPorPaginaDiario();
+  let paginaDiarioAtual = 0;
+
+  function totalPaginasDiario() {
+    return Math.ceil(DIARY_POSTS.length / itensPorPagina);
+  }
+
+  function midiaDiario(post) {
+    if (post.video) {
+      return `<video class="diary-video" src="${post.video}" poster="${post.poster}" muted playsinline loop preload="none"></video>`;
+    }
+    return `<img src="${post.poster}" alt="${escapeHtml(post.title)}" loading="lazy">`;
+  }
+
+  function cartaoDiario(post) {
+    const descricao = post.description ? `<p>${escapeHtml(post.description)}</p>` : '';
+    const pendente = post.video ? '' : '<span class="diary-video-pending">Vídeo em breve</span>';
+
+    return `
+      <div class="diary-video-card" data-id="${post.id}">
+        <div class="diary-video-media">${midiaDiario(post)}</div>
+        <button type="button" class="diary-play-btn" aria-label="Reproduzir vídeo: ${escapeHtml(post.title)}">${DIARY_PLAY_ICON_SVG}</button>
+        <div class="diary-video-overlay">
+          <h3>${escapeHtml(post.title)}</h3>
+          ${descricao}
+          ${pendente}
+        </div>
+      </div>
+    `;
+  }
+
+  function pausarCardsDiario() {
+    diaryTrack.querySelectorAll('.diary-video-card').forEach((card) => {
+      card.classList.remove('is-playing');
+      const video = card.querySelector('video');
+      if (video) video.pause();
+    });
+  }
+
+  function renderizarDiario() {
+    const inicio = paginaDiarioAtual * itensPorPagina;
+    const paginaAtual = DIARY_POSTS.slice(inicio, inicio + itensPorPagina);
+    diaryTrack.innerHTML = paginaAtual.map(cartaoDiario).join('');
+
+    diaryTrack.querySelectorAll('.diary-video-card').forEach((card) => {
+      const video = card.querySelector('video');
+      const botaoPlay = card.querySelector('.diary-play-btn');
+
+      botaoPlay.addEventListener('click', () => {
+        if (!video) return;
+        pausarCardsDiario();
+        card.classList.add('is-playing');
+        video.play();
+      });
+
+      if (video) {
+        video.addEventListener('click', () => {
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+        video.addEventListener('play', () => card.classList.add('is-playing'));
+        video.addEventListener('pause', () => card.classList.remove('is-playing'));
+        video.addEventListener('ended', () => card.classList.remove('is-playing'));
+      }
+    });
+
+    diaryDots.innerHTML = Array.from({ length: totalPaginasDiario() }).map((_, indice) =>
+      `<button type="button" class="diary-dot${indice === paginaDiarioAtual ? ' is-active' : ''}" aria-label="Página ${indice + 1} do diário da pele"></button>`
+    ).join('');
+
+    diaryDots.querySelectorAll('.diary-dot').forEach((botao, indice) => {
+      botao.addEventListener('click', () => {
+        paginaDiarioAtual = indice;
+        renderizarDiario();
+      });
+    });
+  }
+
+  window.addEventListener('resize', () => {
+    const novoValor = itensPorPaginaDiario();
+    if (novoValor === itensPorPagina) return;
+    itensPorPagina = novoValor;
+    paginaDiarioAtual = 0;
+    renderizarDiario();
+  });
+
+  renderizarDiario();
 }
 
 // ==========================================================================
