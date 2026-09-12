@@ -36,8 +36,12 @@
   box-sizing: border-box;
 }
 
+/* overflow-x fica somente no body (nao tambem no html): definir a
+   mesma propriedade non-visible nos dois cria dois containers de
+   scroll aninhados (o "quirk" de propagacao do scroll do body para o
+   viewport deixa de acontecer) e isso quebra position: sticky no
+   header, que passa a "rolar junto" em vez de fixar no topo. */
 html {
-  overflow-x: hidden;
   width: 100%;
 }
 
@@ -140,28 +144,15 @@ h3 {
    HEADER
    ========================================================================== */
 
+/* ---- Header compartilhado (partials/header.html), consumido por
+   todas as paginas via JS. Sempre position: sticky - pinado no topo
+   assim que a rolagem ultrapassa o inicio da pagina, sem precisar
+   remover o header do fluxo normal (evita hacks de altura/padding-top
+   no conteudo seguinte). O mesmo comportamento de opacidade/scroll se
+   aplica em qualquer pagina, controlado por uma unica instancia de JS
+   (ver initHeader() em js/script.js). ---- */
 .site-header {
   position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.site-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(232, 222, 211, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  z-index: -1;
-}
-
-/* ---- Home: header fixo (position: sticky nao se mantem visivel com
-   a estrutura atual da pagina), com vidro/blur mais evidente e sombra
-   sutil apos rolar. Aplicado apenas na Home; as demais paginas mantem
-   o header estatico (position: sticky) sem a classe .is-scrolled. ---- */
-body.page-home .site-header {
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -169,34 +160,28 @@ body.page-home .site-header {
   transition: box-shadow 0.3s ease;
 }
 
-body.page-home .site-header::before {
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+/* Opacidade 100% no topo: fundo solido com a cor de identidade do
+   site (sem transparencia baixa deixando o conteudo atravessar). */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-ivory);
+  z-index: -1;
 }
 
-body.page-home .site-header.is-scrolled {
+/* Ao rolar: mantem opacidade alta, mas adiciona blur/leve translucidez
+   (efeito vidro) e sombra sutil, sem deixar o conteudo de tras
+   interferir visualmente no menu. */
+.site-header.is-scrolled {
   box-shadow: 0 8px 24px rgba(48, 42, 39, 0.08);
 }
 
-body.page-home .site-header.is-scrolled::before {
-  background-color: rgba(232, 222, 211, 0.75);
+.site-header.is-scrolled::before {
+  background-color: rgba(245, 241, 235, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-}
-
-/* Compensa a remocao do header do fluxo normal (position: fixed) para
-   que ele nao cubra o inicio do Hero. O padding (em vez de margin)
-   fica no proprio .hero para que o fundo/pattern da secao continue
-   visivel (e desfocado) atras do header, mantendo a integracao visual
-   com o Hero pedida no Figma. --home-header-height e calculada no JS
-   a partir da altura real do header; 100px e um fallback razoavel. */
-body.page-home .hero {
-  padding-top: var(--home-header-height, 100px);
-}
-
-/* Com o header fixo, um link ancora (#tratamentos, #sobre, etc.)
-   precisa de folga no topo para nao ficar escondido atras dele. */
-body.page-home [id] {
-  scroll-margin-top: var(--home-header-height, 100px);
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
 }
 
 .header-inner {
@@ -209,23 +194,29 @@ body.page-home [id] {
   position: relative;
 }
 
+/* Com o header sticky, um link ancora (#tratamentos, #sobre, etc.)
+   precisa de folga no topo para nao ficar escondido atras dele. */
+[id] {
+  scroll-margin-top: 100px;
+}
+
 /* Desktop: logo fixo a esquerda, navegacao centralizada no espaco
    disponivel, CTA fixo a direita - nao e um simples space-between,
    pois a navegacao fica centrada entre a logo e o CTA, e nao colada
-   a nenhum dos dois. Aplicado apenas na Home (.home-header) para nao
-   alterar o cabecalho das demais paginas nesta tarefa. */
+   a nenhum dos dois. Aplicado a todas as paginas, ja que o header e
+   um unico componente compartilhado. */
 @media (min-width: 900px) {
-  .home-header {
+  .header-inner {
     display: grid;
     grid-template-columns: auto 1fr auto;
     justify-content: normal;
   }
 
-  .home-header .main-nav {
+  .header-inner .main-nav {
     justify-self: center;
   }
 
-  .home-header .header-cta-desktop {
+  .header-inner .header-cta-desktop {
     justify-self: end;
   }
 }
@@ -370,6 +361,8 @@ body.page-home [id] {
 }
 
 .nav-dropdown a {
+  display: block;
+  width: 100%;
   border-bottom: none;
   padding: 10px 0 !important;
   text-transform: none;
@@ -472,6 +465,24 @@ body.lightbox-open {
     opacity: 1 !important;
     font-size: 14px !important;
     padding-bottom: 0 !important;
+  }
+
+  /* Corrige o dropdown desalinhado: as regras "mobile" acima
+     (.nav-item.has-dropdown com width:100%/flex-direction:column e
+     .nav-dropdown com width:100%) nao tinham reset equivalente aqui,
+     entao venciam a cascata tambem no desktop (mesma especificidade,
+     definidas depois no arquivo) e faziam o item "Tratamentos" ocupar
+     uma largura maior que a do proprio texto - descentralizando o
+     dropdown, que usa left: 50% relativo a essa largura. */
+  .nav-item.has-dropdown {
+    width: auto;
+    flex-direction: row;
+  }
+
+  .nav-dropdown {
+    width: 240px;
+    padding-left: 0;
+    border-bottom: none;
   }
 
   .main-nav .nav-cta {
@@ -742,23 +753,16 @@ body.page-home .hero-text {
   text-align: center;
 }
 
-/* Home: 3 blocos lado a lado (Dermatologia Estetica, Dermatologia
-   Clinica, Medicina Integrativa), cada um com link para sua propria
-   pagina - substitui as antigas faixas horizontais, que geravam muito
-   espacamento vertical. */
+/* Home: os 3 blocos (Dermatologia Estetica, Dermatologia Clinica,
+   Medicina Integrativa) ficam empilhados, um embaixo do outro, cada
+   um com link para sua propria pagina - gap consistente e enxuto para
+   nao gerar espacamento vertical exagerado entre eles. */
 .treatments-columns {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
   margin-top: 48px;
   text-align: left;
-}
-
-@media (min-width: 900px) {
-  .treatments-columns {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
 }
 
 .treatment-block {
@@ -768,7 +772,7 @@ body.page-home .hero-text {
   background-color: var(--color-ivory);
   border: 1px solid var(--color-stone);
   border-radius: 24px;
-  padding: 32px 28px;
+  padding: 22px 28px;
   transition: background-color 0.2s ease;
 }
 
@@ -776,13 +780,24 @@ body.page-home .hero-text {
   background-color: var(--color-warm-sand);
 }
 
+/* Empilhados, os blocos ficam centralizados com uma largura maxima -
+   evita que cada card vire uma faixa larga e quase vazia no desktop. */
+@media (min-width: 900px) {
+  .treatment-block {
+    width: 100%;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .treatment-block-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  margin-bottom: 20px;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
 }
 
 .treatment-block-icon img {
@@ -793,22 +808,28 @@ body.page-home .hero-text {
 }
 
 .treatment-block h3 {
-  font-size: 26px;
-  margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 14px;
 }
 
+/* Largura limitada para a descricao quebrar em ~3 linhas (em vez de
+   esticar numa unica linha na largura do bloco), e margem menor que a
+   do titulo acima - a descricao fica visualmente mais perto do botao
+   "Explorar" do que do titulo. */
 .treatment-block p {
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 14px;
+  max-width: 250px;
   color: #302A27;
   opacity: 0.75;
   line-height: 1.6;
-  margin-bottom: 24px;
-  flex: 1;
+  margin-bottom: 8px;
 }
 
+/* Botao deslocado para a direita do bloco. */
 .treatment-block-link {
+  align-self: flex-end;
   white-space: nowrap;
 }
 
@@ -979,16 +1000,21 @@ body.page-home .hero-text {
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* object-position ajustado ao enquadramento de cada foto real fornecida
+   pelo cliente (Cloudinary) - o card e mais largo que alto (4/3), as
+   fotos sao verticais, entao o corte automatico de cover acontece no
+   eixo vertical; o deslocamento mantem o rosto dentro do enquadramento
+   em vez de cortar pelo centro. */
 .why-card-precisao img {
-  object-position: center 25%;
+  object-position: center 22%;
 }
 
 .why-card-naturalidade img {
-  object-position: 65% 35%;
+  object-position: center 50%;
 }
 
 .why-card-acompanhamento img {
-  object-position: center 15%;
+  object-position: center 20%;
 }
 
 @media (max-width: 699px) {
@@ -1245,8 +1271,8 @@ body.page-home .hero-text {
 
 @media (min-width: 900px) {
   .diary-track {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
   }
 }
 
@@ -1269,7 +1295,7 @@ body.page-home .hero-text {
 
 @media (min-width: 900px) {
   .diary-video-card {
-    max-width: 340px;
+    max-width: 400px;
   }
 }
 
@@ -1489,12 +1515,12 @@ body.page-home .hero-text {
 
   .cta-final-photo {
     position: absolute;
-    top: -24px;
-    bottom: -80px;
+    top: -40px;
+    bottom: -110px;
     right: 0;
     flex: none;
-    width: 40%;
-    max-width: 460px;
+    width: 62%;
+    max-width: 700px;
     z-index: 2;
   }
 

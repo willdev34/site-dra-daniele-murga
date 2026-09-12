@@ -1,77 +1,74 @@
-// Menu mobile
-const menuToggle = document.getElementById('menu-toggle');
-const mainNav = document.getElementById('main-nav');
-const menuOverlay = document.getElementById('menu-overlay');
+// ==========================================================================
+// Header compartilhado (partials/header.html, injetado via XHR sincrono
+// em cada pagina antes deste script rodar - ver o trecho inline logo
+// apos o placeholder no <body>). Toda a interatividade do header (menu
+// mobile e o estado de rolagem) e inicializada aqui, uma unica vez,
+// para as duas paginas do site.
+// ==========================================================================
 
-function abrirMenu() {
-  mainNav.classList.add('is-active');
-  menuToggle.classList.add('is-active');
-  menuOverlay.classList.add('is-active');
-  menuToggle.setAttribute('aria-expanded', 'true');
-  menuToggle.setAttribute('aria-label', 'Fechar menu');
-  document.body.classList.add('menu-open');
-}
+function initHeader() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const mainNav = document.getElementById('main-nav');
+  const menuOverlay = document.getElementById('menu-overlay');
 
-function fecharMenu() {
-  mainNav.classList.remove('is-active');
-  menuToggle.classList.remove('is-active');
-  menuOverlay.classList.remove('is-active');
-  menuToggle.setAttribute('aria-expanded', 'false');
-  menuToggle.setAttribute('aria-label', 'Abrir menu');
-  document.body.classList.remove('menu-open');
-}
-
-if (menuToggle && mainNav && menuOverlay) {
-  menuToggle.addEventListener('click', () => {
-    const aberto = mainNav.classList.contains('is-active');
-    aberto ? fecharMenu() : abrirMenu();
-  });
-
-  menuOverlay.addEventListener('click', fecharMenu);
-
-  mainNav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', fecharMenu);
-  });
-
-  document.addEventListener('keydown', (evento) => {
-    if (evento.key === 'Escape') fecharMenu();
-  });
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 900) fecharMenu();
-  });
-}
-
-// Header: fixo no topo durante o scroll, com blur/opacidade que
-// aumentam a partir de .is-scrolled. Escopado a Home - nas demais
-// paginas o header permanece como esta hoje (position: sticky),
-// sem a classe .is-scrolled e sem a variavel de altura abaixo.
-const siteHeader = document.getElementById('site-header');
-
-if (siteHeader && document.body.classList.contains('page-home')) {
-  // O header vira position:fixed na Home, entao e removido do fluxo
-  // normal do documento; a altura medida aqui e usada para empurrar o
-  // Hero para baixo (via padding-top), evitando que o header cubra o
-  // inicio da pagina.
-  function atualizarAlturaHeader() {
-    document.documentElement.style.setProperty('--home-header-height', siteHeader.offsetHeight + 'px');
+  function abrirMenu() {
+    mainNav.classList.add('is-active');
+    menuToggle.classList.add('is-active');
+    menuOverlay.classList.add('is-active');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    menuToggle.setAttribute('aria-label', 'Fechar menu');
+    document.body.classList.add('menu-open');
   }
 
-  atualizarAlturaHeader();
-  window.addEventListener('resize', atualizarAlturaHeader);
-
-  if (window.ResizeObserver) {
-    new ResizeObserver(atualizarAlturaHeader).observe(siteHeader);
+  function fecharMenu() {
+    mainNav.classList.remove('is-active');
+    menuToggle.classList.remove('is-active');
+    menuOverlay.classList.remove('is-active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Abrir menu');
+    document.body.classList.remove('menu-open');
   }
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      siteHeader.classList.add('is-scrolled');
-    } else {
-      siteHeader.classList.remove('is-scrolled');
-    }
-  }, { passive: true });
+  if (menuToggle && mainNav && menuOverlay) {
+    menuToggle.addEventListener('click', () => {
+      const aberto = mainNav.classList.contains('is-active');
+      aberto ? fecharMenu() : abrirMenu();
+    });
+
+    menuOverlay.addEventListener('click', fecharMenu);
+
+    mainNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', fecharMenu);
+    });
+
+    document.addEventListener('keydown', (evento) => {
+      if (evento.key === 'Escape') fecharMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 900) fecharMenu();
+    });
+  }
+
+  // Header: sticky em todas as paginas, com blur/opacidade que
+  // aumentam a partir de .is-scrolled - mesmo comportamento em
+  // qualquer pagina que consuma o header compartilhado.
+  const siteHeader = document.getElementById('site-header');
+
+  if (siteHeader) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        siteHeader.classList.add('is-scrolled');
+      } else {
+        siteHeader.classList.remove('is-scrolled');
+      }
+    }, { passive: true });
+
+    if (window.scrollY > 20) siteHeader.classList.add('is-scrolled');
+  }
 }
+
+initHeader();
 
 // Sobre a Clinica: bloco maior de "O espaco" preparado para receber um
 // video real do Instagram. Enquanto "video" nao existir, o botao de
@@ -431,60 +428,58 @@ if (resultsGrid) {
 // Diario da Pele (carrossel de videos/reels, data-driven, com paginacao)
 // ==========================================================================
 //
-// Cada item representa um video vertical (reel do Instagram da Dra.
-// Daniele). Enquanto o arquivo de video real de um assunto nao estiver
-// disponivel, "video" fica null: o card mostra apenas o poster com um
-// aviso de "Vídeo em breve" e o botao de play nao faz nada. Assim que o
-// arquivo existir, basta preencher "video" (e "poster", se quiser trocar
-// a capa) - nenhuma outra parte do HTML/CSS precisa mudar.
-//
-// Para adicionar um novo assunto no futuro, inclua um novo objeto no
-// array abaixo; o carrossel e a paginacao se ajustam sozinhos.
+// Cada item representa um Reel/post real do Instagram da Dra. Daniele
+// (ver "instagramUrl", mantida apenas como referencia/metadata) e agora
+// tem um arquivo de video real hospedado no Cloudinary em "video". O
+// campo "poster" continua sendo a capa exibida antes do play.
 
 const DIARY_POSTS = [
   {
     id: 'rosacea',
     title: 'Rosácea',
     description: 'A escolha do protetor solar certo faz toda a diferença no tratamento da rosácea.',
-    video: null,
+    instagramUrl: 'https://www.instagram.com/reel/DT3hQrFjnVF/',
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183539/rosacea_home_pndxz0.mp4',
     poster: 'assets/placeholders/video-poster-placeholder.svg'
   },
   {
     id: 'mounjaro',
     title: 'Mounjaro',
     description: 'Como funciona, quando é indicado e por que o acompanhamento médico é essencial durante o uso.',
-    video: null,
+    instagramUrl: 'https://www.instagram.com/reel/DQmk45TjuC1/',
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183690/mounjaro_home_gyctrn.mp4',
     poster: 'assets/placeholders/video-poster-placeholder.svg'
   },
-  // ---- MOCK DATA: conteudos ficticios usados apenas para visualizar o
-  // carrossel/paginacao com mais de 2 itens. Remover quando os proximos
-  // Reels reais forem definidos e substituir por objetos no mesmo formato.
   {
-    id: 'mock-melasma',
+    id: 'melasma',
     title: 'Melasma',
-    description: 'Cuidados que fazem diferença no tratamento e na rotina da pele.',
-    video: null,
+    description: 'Manchas que exigem tratamento contínuo e proteção diária para não retornar.',
+    instagramUrl: 'https://www.instagram.com/reel/DOhOQ7SDh-3/',
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183880/melasma_home_kxcbi5.mp4',
     poster: 'assets/placeholders/video-poster-placeholder.svg'
   },
   {
-    id: 'mock-protetor-solar',
+    id: 'protetor-solar',
     title: 'Protetor solar',
-    description: 'Como escolher a proteção ideal para sua pele.',
-    video: null,
+    description: 'Como escolher a proteção ideal para cada tipo de pele.',
+    instagramUrl: 'https://www.instagram.com/reel/DMusWB7xsGt/',
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183971/protetor_solar_home_bsahow.mp4',
     poster: 'assets/placeholders/video-poster-placeholder.svg'
   },
   {
-    id: 'mock-skincare',
-    title: 'Skincare',
-    description: 'Uma rotina simples pode transformar a saúde da sua pele.',
-    video: null,
+    id: 'queda-capilar',
+    title: 'Queda Capilar',
+    description: 'Entenda as causas mais comuns e quando buscar avaliação médica.',
+    instagramUrl: 'https://www.instagram.com/p/DOWRq6gDpWi/',
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789184117/queda_capilar_home_ps8tjj.mp4',
     poster: 'assets/placeholders/video-poster-placeholder.svg'
   },
   {
-    id: 'mock-preenchimento-facial',
+    id: 'preenchimento-facial',
     title: 'Preenchimento facial',
     description: 'Naturalidade e equilíbrio para valorizar seus traços.',
-    video: null,
+    instagramUrl: 'https://www.instagram.com/p/DOJwTjoEmGB/',
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789184185/preenchimento_facial_home_kd7pue.mp4',
     poster: 'assets/placeholders/video-poster-placeholder.svg'
   }
 ];
@@ -497,7 +492,7 @@ if (diaryTrack) {
   const diaryDots = document.getElementById('diary-dots');
 
   function itensPorPaginaDiario() {
-    return window.innerWidth >= 900 ? 2 : 1;
+    return window.innerWidth >= 900 ? 3 : 1;
   }
 
   let itensPorPagina = itensPorPaginaDiario();
