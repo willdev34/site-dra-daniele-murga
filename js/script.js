@@ -694,10 +694,76 @@ if (diaryTrack) {
 //   poster    - imagem de capa (thumbnail) exibida no card
 
 const GOOGLE_REVIEWS = [
-  { text: 'Este espaço será atualizado com uma avaliação real do Google.' },
-  { text: 'Novas avaliações verificadas serão adicionadas em breve.' },
-  { text: 'Em breve, relatos reais de pacientes estarão disponíveis aqui.' },
-  { text: 'As avaliações completas do Google serão exibidas nesta área.' }
+  {
+    name: 'Pamela Oliveira',
+    rating: 5,
+    text: 'Hoje tive o prazer de conhecer, excelente profissional! Fui muito bem atendida, extremamente atenciosa, cuidadosa e explica tudo com muita clareza. Dá pra perceber o quanto ama o que faz e se preocupa de verdade com os pacientes.'
+  },
+  {
+    name: 'Thayanne Layse',
+    rating: 5,
+    text: 'Depois de muitos anos, tive a felicidade de reencontrar a dermatologista que cuidou de mim na juventude e ela continua exatamente como eu lembrava: maravilhosa, atenciosa e extremamente gentil. O consultório é impecável, acolhedor e transmite muito cuidado em cada detalhe.'
+  },
+  {
+    name: 'Lethícia Rodrigues',
+    rating: 5,
+    text: 'Sou paciente da doutora há mais de 2 anos, e ela, junto com toda a sua equipe, sempre foi muito atenciosa e cuidadosa comigo. Hoje em dia, até meu filho adolescente, Miguel, faz acompanhamento com ela.'
+  },
+  {
+    name: 'borges fitness',
+    rating: 5,
+    text: 'Ótima profissional! Muito atenciosa, prática, resolve logo o problema. Fui lá com meu filho de 2 anos que tinha um molusco próximo à boca, onde outras dermatologistas falavam que era difícil de tirar. A Dra Daniele tirou em segundos e sem dor nenhuma.'
+  },
+  {
+    name: 'Daniele Alves',
+    rating: 5,
+    text: 'Foi maravilhosa, a dra nos atende muito tanto como pessoa, quanto no profissional, todas as demandas que preciso sempre são solucionadas, não largarei mais ela! Fora a secretária Dani também e o aconchego do consultório, tudo mil vezes parabéns!'
+  },
+  {
+    name: 'marieny friebe',
+    rating: 5,
+    text: 'Já sou paciente da Dra Danielle à um tempo... adoro ela como profissional e como pessoa. Ela é super atenciosa, dedicada, carinhosa e consegue ter um olhar atento e diferente a cada paciente. O consultório é lindo, como ela, sua nova secretária tb é super gentil.'
+  },
+  {
+    name: 'Elaine Tenorio',
+    rating: 5,
+    text: 'Estava com falhas enormes por conta da alopecia, comecei o tratamento com a Dra. Daniele e com um mês as falhas foram preenchidas. Excelente profissional, nada de enrolação com os tratamentos.'
+  },
+  {
+    name: 'Ana Loyola',
+    rating: 5,
+    text: 'Durante muito tempo convivi com uma acne tardia sem entender a causa, o que afetava não só minha pele, mas também minha autoestima. Graças ao olhar atento, à escuta cuidadosa e à competência da Dra., finalmente tive um diagnóstico preciso e um tratamento eficaz.'
+  },
+  {
+    name: 'Tatyana Furtado',
+    rating: 5,
+    text: 'Minha pele ficou fantástica com os cuidados da Dra, ela estava lotada de espinhas e manchada! Estou aqui hj brincando com ela que NÃO VIVO MAIS SEM ELA!!! Hj retornei para fazer a sessão de laser e sair com pele de pêssego!!'
+  },
+  {
+    name: 'Alan Silva',
+    rating: 5,
+    text: 'Cheguei até a Dra com a pele manchada por um procedimento realizado por outro profissional. A dra me passou uma medicação que resolveu no mesmo dia, fora que ela foi super atenciosa sobre as demais questões da minha saúde. Ótima.'
+  },
+  {
+    name: 'Fabiano Carvalho',
+    rating: 5,
+    text: 'Fiz tratamento de rosácea com outra dermatologista por muito tempo, gastando muito, e sem evolução. Ao conhecer a Dra Daniele, resolveu o problema com as medicações certas em 30 dias. Excelente profissional. Precisa em seus tratamentos e prescrições.'
+  },
+  {
+    name: 'Joelma Freitas',
+    rating: 5,
+    text: 'Sou paciente dessa mulher linda e querida há anos e não troco por nada nesse mundo; extremamente competente e profissional sem igual!! Simplesmente venham...'
+  },
+  {
+    name: 'Gabriele Mariano',
+    rating: 5,
+    text: 'Minha experiência foi boa. A consulta foi bem rápida. Em uma consulta a Dra. Daniele resolveu 3 problemas meus kkkk. Ela é um amor, muito carinhosa. Muito obrigada! Eu estou indicando ela pra todo mundo e pros meus pacientes também!'
+  },
+  {
+    name: 'kayky Nunes',
+    rating: 5,
+    text: 'É inacreditável o que essa médica fez pela minha pele e autoestima! Sou outra pessoa. Gratidão à essa médica MARAVILHOSA.'
+  }
 ];
 
 const INSTAGRAM_TESTEMUNHOS = [
@@ -854,13 +920,22 @@ const PLAY_ICON_SVG = '<svg width="20" height="22" viewBox="0 0 20 22" fill="cur
 const googleTrack = document.getElementById('google-marquee-track');
 
 if (googleTrack) {
+  function estrelasHtml(rating) {
+    const cheias = '&#9733;'.repeat(rating);
+    const vazias = '&#9734;'.repeat(5 - rating);
+    return `<div class="testimonial-stars" aria-label="${rating} de 5 estrelas">${cheias}${vazias}</div>`;
+  }
+
+  const GOOGLE_LOGO_HTML = '<span class="google-review-source"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span>';
+
   function cartaoGoogle(avaliacao) {
     return `
       <article class="google-review-card">
         <p class="testimonial-quote">${escapeHtml(avaliacao.text)}</p>
+        ${estrelasHtml(avaliacao.rating)}
         <div class="result-card-meta">
-          <span class="google-review-source">Google</span>
-          <span class="chip">Em breve</span>
+          ${GOOGLE_LOGO_HTML}
+          <span class="testimonial-author">${escapeHtml(avaliacao.name)}</span>
         </div>
       </article>
     `;
