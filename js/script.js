@@ -424,14 +424,19 @@ if (resultsGrid) {
   renderizarGaleria(casosVisiveis);
 }
 
-// ==========================================================================
-// Diario da Pele (carrossel de videos/reels, data-driven, com paginacao)
-// ==========================================================================
-//
-// Cada item representa um Reel/post real do Instagram da Dra. Daniele
-// (ver "instagramUrl", mantida apenas como referencia/metadata) e agora
-// tem um arquivo de video real hospedado no Cloudinary em "video". O
-// campo "poster" continua sendo a capa exibida antes do play.
+// Gera a URL de um frame real do video, hospedado no proprio Cloudinary,
+// para usar como poster/capa do card antes do play - troca a extensao
+// .mp4 por .jpg e insere "so_auto" (o Cloudinary escolhe automaticamente
+// o frame mais representativo, por distribuicao de cor, evitando pegar
+// uma tela preta ou transicao logo no comeco do video) na URL. Assim,
+// cada video tem sua propria capa real (nao mais um placeholder generico
+// igual para todos), sem precisar subir uma imagem extra para cada um.
+function posterDoVideoCloudinary(videoUrl) {
+  if (!videoUrl) return null;
+  return videoUrl
+    .replace('/video/upload/', '/video/upload/so_auto/')
+    .replace(/\.mp4$/i, '.jpg');
+}
 
 const DIARY_POSTS = [
   {
@@ -439,48 +444,42 @@ const DIARY_POSTS = [
     title: 'Rosácea',
     description: 'A escolha do protetor solar certo faz toda a diferença no tratamento da rosácea.',
     instagramUrl: 'https://www.instagram.com/reel/DT3hQrFjnVF/',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183539/rosacea_home_pndxz0.mp4',
-    poster: 'assets/placeholders/video-poster-placeholder.svg'
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183539/rosacea_home_pndxz0.mp4'
   },
   {
     id: 'mounjaro',
     title: 'Mounjaro',
     description: 'Como funciona, quando é indicado e por que o acompanhamento médico é essencial durante o uso.',
     instagramUrl: 'https://www.instagram.com/reel/DQmk45TjuC1/',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183690/mounjaro_home_gyctrn.mp4',
-    poster: 'assets/placeholders/video-poster-placeholder.svg'
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183690/mounjaro_home_gyctrn.mp4'
   },
   {
     id: 'melasma',
     title: 'Melasma',
     description: 'Manchas que exigem tratamento contínuo e proteção diária para não retornar.',
     instagramUrl: 'https://www.instagram.com/reel/DOhOQ7SDh-3/',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183880/melasma_home_kxcbi5.mp4',
-    poster: 'assets/placeholders/video-poster-placeholder.svg'
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183880/melasma_home_kxcbi5.mp4'
   },
   {
     id: 'protetor-solar',
     title: 'Protetor solar',
     description: 'Como escolher a proteção ideal para cada tipo de pele.',
     instagramUrl: 'https://www.instagram.com/reel/DMusWB7xsGt/',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183971/protetor_solar_home_bsahow.mp4',
-    poster: 'assets/placeholders/video-poster-placeholder.svg'
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183971/protetor_solar_home_bsahow.mp4'
   },
   {
     id: 'queda-capilar',
     title: 'Queda Capilar',
     description: 'Entenda as causas mais comuns e quando buscar avaliação médica.',
     instagramUrl: 'https://www.instagram.com/p/DOWRq6gDpWi/',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789184117/queda_capilar_home_ps8tjj.mp4',
-    poster: 'assets/placeholders/video-poster-placeholder.svg'
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789184117/queda_capilar_home_ps8tjj.mp4'
   },
   {
     id: 'preenchimento-facial',
     title: 'Preenchimento facial',
     description: 'Naturalidade e equilíbrio para valorizar seus traços.',
     instagramUrl: 'https://www.instagram.com/p/DOJwTjoEmGB/',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789184185/preenchimento_facial_home_kd7pue.mp4',
-    poster: 'assets/placeholders/video-poster-placeholder.svg'
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789184185/preenchimento_facial_home_kd7pue.mp4'
   }
 ];
 
@@ -489,24 +488,23 @@ const DIARY_PLAY_ICON_SVG = '<svg width="20" height="22" viewBox="0 0 20 22" fil
 const diaryTrack = document.getElementById('diary-track');
 
 if (diaryTrack) {
-  const diaryDots = document.getElementById('diary-dots');
+  const diaryPrevBtn = document.getElementById('diary-prev');
+  const diaryNextBtn = document.getElementById('diary-next');
+  const carouselWrap = document.querySelector('.diary-carousel');
 
-  function itensPorPaginaDiario() {
-    return window.innerWidth >= 900 ? 3 : 1;
-  }
-
-  let itensPorPagina = itensPorPaginaDiario();
-  let paginaDiarioAtual = 0;
-
-  function totalPaginasDiario() {
-    return Math.ceil(DIARY_POSTS.length / itensPorPagina);
-  }
+  const VELOCIDADE_PX_POR_SEGUNDO = 40;
+  const AVANCO_MANUAL_PX = 340;
 
   function midiaDiario(post) {
     if (post.video) {
-      return `<video class="diary-video" src="${post.video}" poster="${post.poster}" muted playsinline loop preload="none"></video>`;
+      const poster = posterDoVideoCloudinary(post.video);
+      // Sem "muted" fixo aqui: o video comeca mudo via JS (abaixo, no
+      // momento em que os cards sao montados), para nunca tocar som
+      // sozinho na esteira automatica - e e desmutado so quando o
+      // usuario clica propositalmente no botao de play.
+      return `<video class="diary-video" src="${post.video}" poster="${poster}" playsinline loop preload="none"></video>`;
     }
-    return `<img src="${post.poster}" alt="${escapeHtml(post.title)}" loading="lazy">`;
+    return `<img src="assets/placeholders/video-poster-placeholder.svg" alt="${escapeHtml(post.title)}" loading="lazy">`;
   }
 
   function cartaoDiario(post) {
@@ -534,57 +532,146 @@ if (diaryTrack) {
     });
   }
 
-  function renderizarDiario() {
-    const inicio = paginaDiarioAtual * itensPorPagina;
-    const paginaAtual = DIARY_POSTS.slice(inicio, inicio + itensPorPagina);
-    diaryTrack.innerHTML = paginaAtual.map(cartaoDiario).join('');
+  // O conjunto e duplicado (igual ao carrossel de avaliacoes do Google)
+  // para permitir um loop visualmente continuo: ao rolar exatamente a
+  // largura de um conjunto, reseta a posicao sem salto perceptivel.
+  const conjuntoDuplicado = [...DIARY_POSTS, ...DIARY_POSTS];
+  diaryTrack.innerHTML = conjuntoDuplicado.map(cartaoDiario).join('');
 
-    diaryTrack.querySelectorAll('.diary-video-card').forEach((card) => {
-      const video = card.querySelector('video');
-      const botaoPlay = card.querySelector('.diary-play-btn');
+  let larguraConjunto = 0;
+  let offsetAtual = 0;
+  let rolando = true;
+  let ultimoTimestamp = null;
 
-      botaoPlay.addEventListener('click', () => {
-        if (!video) return;
-        pausarCardsDiario();
-        card.classList.add('is-playing');
-        video.play();
-      });
+  function medirLarguraConjunto() {
+    const cards = diaryTrack.querySelectorAll('.diary-video-card');
+    if (cards.length < DIARY_POSTS.length) return 0;
+    const primeiro = cards[0];
+    const primeiroDoClone = cards[DIARY_POSTS.length];
+    return primeiroDoClone.offsetLeft - primeiro.offsetLeft;
+  }
 
-      if (video) {
-        video.addEventListener('click', () => {
-          if (video.paused) {
-            video.play();
-          } else {
-            video.pause();
-          }
-        });
-        video.addEventListener('play', () => card.classList.add('is-playing'));
-        video.addEventListener('pause', () => card.classList.remove('is-playing'));
-        video.addEventListener('ended', () => card.classList.remove('is-playing'));
-      }
+  function aplicarOffset() {
+    diaryTrack.style.setProperty('--diary-offset', `${-offsetAtual}px`);
+  }
+
+  function passoAnimacao(timestamp) {
+    if (ultimoTimestamp === null) ultimoTimestamp = timestamp;
+    const deltaSegundos = (timestamp - ultimoTimestamp) / 1000;
+    ultimoTimestamp = timestamp;
+
+    if (rolando && larguraConjunto > 0) {
+      offsetAtual += VELOCIDADE_PX_POR_SEGUNDO * deltaSegundos;
+      if (offsetAtual >= larguraConjunto) offsetAtual -= larguraConjunto;
+      aplicarOffset();
+    }
+
+    requestAnimationFrame(passoAnimacao);
+  }
+
+  function pausarEsteira() {
+    rolando = false;
+  }
+
+  function retomarEsteira() {
+    rolando = true;
+  }
+
+  function avancarManual(direcao) {
+    if (larguraConjunto <= 0) return;
+    offsetAtual += direcao * AVANCO_MANUAL_PX;
+    if (offsetAtual >= larguraConjunto) offsetAtual -= larguraConjunto;
+    if (offsetAtual < 0) offsetAtual += larguraConjunto;
+    aplicarOffset();
+  }
+
+  diaryTrack.querySelectorAll('.diary-video-card').forEach((card) => {
+    const video = card.querySelector('video');
+    const botaoPlay = card.querySelector('.diary-play-btn');
+
+    botaoPlay.addEventListener('click', () => {
+      if (!video) return;
+      pausarCardsDiario();
+      card.classList.add('is-playing');
+      pausarEsteira();
+      video.play();
     });
 
-    diaryDots.innerHTML = Array.from({ length: totalPaginasDiario() }).map((_, indice) =>
-      `<button type="button" class="diary-dot${indice === paginaDiarioAtual ? ' is-active' : ''}" aria-label="Página ${indice + 1} do diário da pele"></button>`
-    ).join('');
-
-    diaryDots.querySelectorAll('.diary-dot').forEach((botao, indice) => {
-      botao.addEventListener('click', () => {
-        paginaDiarioAtual = indice;
-        renderizarDiario();
+    if (video) {
+      video.addEventListener('click', () => {
+        if (video.paused) {
+          pausarEsteira();
+          video.play();
+        } else {
+          video.pause();
+        }
       });
+      video.addEventListener('play', () => card.classList.add('is-playing'));
+      video.addEventListener('pause', () => {
+        card.classList.remove('is-playing');
+        retomarEsteira();
+      });
+      video.addEventListener('ended', () => {
+        card.classList.remove('is-playing');
+        retomarEsteira();
+      });
+    }
+  });
+
+  if (diaryPrevBtn) diaryPrevBtn.addEventListener('click', () => avancarManual(-1));
+  if (diaryNextBtn) diaryNextBtn.addEventListener('click', () => avancarManual(1));
+
+  if (carouselWrap) {
+    carouselWrap.addEventListener('mouseenter', pausarEsteira);
+    carouselWrap.addEventListener('mouseleave', () => {
+      if (!diaryTrack.querySelector('.diary-video-card.is-playing')) retomarEsteira();
     });
   }
 
-  window.addEventListener('resize', () => {
-    const novoValor = itensPorPaginaDiario();
-    if (novoValor === itensPorPagina) return;
-    itensPorPagina = novoValor;
-    paginaDiarioAtual = 0;
-    renderizarDiario();
+  // Arrastar para o lado (mouse ou touch) pausa a esteira durante o
+  // gesto e desloca a faixa junto com o dedo/mouse.
+  let arrastoInicioX = null;
+  let offsetNoInicioArrasto = 0;
+
+  diaryTrack.addEventListener('pointerdown', (evento) => {
+    // Se o pointerdown comecou em cima do botao de play (ou de um
+    // video ja tocando), nao inicia o arraste do carrossel - assim o
+    // clique/toque chega normalmente ao botao/video, sem ser
+    // "sequestrado" pela captura de ponteiro usada para arrastar.
+    if (evento.target.closest('.diary-play-btn, video')) return;
+
+    arrastoInicioX = evento.clientX;
+    offsetNoInicioArrasto = offsetAtual;
+    pausarEsteira();
+    diaryTrack.setPointerCapture(evento.pointerId);
   });
 
-  renderizarDiario();
+  diaryTrack.addEventListener('pointermove', (evento) => {
+    if (arrastoInicioX === null || larguraConjunto <= 0) return;
+    const delta = evento.clientX - arrastoInicioX;
+    let novoOffset = offsetNoInicioArrasto - delta;
+    novoOffset = ((novoOffset % larguraConjunto) + larguraConjunto) % larguraConjunto;
+    offsetAtual = novoOffset;
+    aplicarOffset();
+  });
+
+  function finalizarArrastoDiario() {
+    if (arrastoInicioX === null) return;
+    arrastoInicioX = null;
+    if (!diaryTrack.querySelector('.diary-video-card.is-playing')) retomarEsteira();
+  }
+
+  diaryTrack.addEventListener('pointerup', finalizarArrastoDiario);
+  diaryTrack.addEventListener('pointercancel', finalizarArrastoDiario);
+
+  window.addEventListener('resize', () => {
+    larguraConjunto = medirLarguraConjunto();
+  });
+
+  requestAnimationFrame(() => {
+    larguraConjunto = medirLarguraConjunto();
+    requestAnimationFrame(passoAnimacao);
+  });
 }
 
 // ==========================================================================
