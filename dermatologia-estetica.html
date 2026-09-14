@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dermatologia Est&eacute;tica | Dra. Daniele Murga</title>
   <meta name="description" content="Tratamentos de dermatologia est&eacute;tica com a Dra. Daniele Murga: preenchimento, toxina botul&iacute;nica, bioestimuladores, laser e mais, sempre a partir de uma avalia&ccedil;&atilde;o individual.">
-  <link rel="stylesheet" href="css/style.css?v=35">
+  <link rel="stylesheet" href="css/style.css?v=38">
 </head>
 <body>
 
@@ -175,23 +175,37 @@
     </div>
   </section>
 
-  <section class="cta-final">
-    <div class="container-home">
-      <div class="cta-final-top">
-        <div class="cta-final-content">
-          <h2>Encontre o tratamento<br>ideal para sua pele.</h2>
-          <p>Cada pele tem necessidades diferentes. Agende uma avalia&ccedil;&atilde;o e descubra o cuidado mais indicado para voc&ecirc;.</p>
-          <a href="index.html#agendar" class="btn btn-outline-light">Agendar avalia&ccedil;&atilde;o</a>
-        </div>
-        <div class="cta-final-photo">
-          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789171441/cta_home_npyf1k.png" alt="Dra. Daniele Murga">
-        </div>
-      </div>
-      <div class="cta-final-bar">
-        <span>Atendimento presencial &middot; Rio de Janeiro</span>
-      </div>
-    </div>
-  </section>
+    <div id="cta-final-placeholder"
+       data-titulo="Realce sua beleza&lt;br&gt;com segurança."
+       data-texto="Cada procedimento começa com uma avaliação individual, pensada para o seu rosto e o seu corpo."
+       data-botao="Agendar avaliação"
+       data-link="index.html#agendar"
+       data-foto="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789171441/cta_home_npyf1k.png">
+  </div>
+  <script>
+    (function () {
+      var placeholder = document.getElementById('cta-final-placeholder');
+      var dados = {
+        titulo: placeholder.dataset.titulo,
+        texto: placeholder.dataset.texto,
+        botao: placeholder.dataset.botao,
+        link: placeholder.dataset.link,
+        foto: placeholder.dataset.foto
+      };
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'partials/cta-final.html', false);
+      try { xhr.send(null); } catch (erro) { /* silencioso: pagina segue sem CTA em vez de quebrar */ }
+      if (xhr.status === 200 || xhr.status === 0) {
+        placeholder.outerHTML = xhr.responseText;
+        document.getElementById('cta-final-titulo').innerHTML = dados.titulo;
+        document.getElementById('cta-final-texto').textContent = dados.texto;
+        document.getElementById('cta-final-botao').textContent = dados.botao;
+        document.getElementById('cta-final-botao').href = dados.link;
+        document.getElementById('cta-final-foto').src = dados.foto;
+      }
+    })();
+  </script>
 
   <div id="footer-placeholder"></div>
   <script>

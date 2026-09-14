@@ -120,23 +120,37 @@
     </div>
   </section>
 
-  <section class="cta-final">
-    <div class="container-home">
-      <div class="cta-final-top">
-        <div class="cta-final-content">
-          <h2>Vamos cuidar da<br>sa&uacute;de da sua pele?</h2>
-          <p>Agende uma consulta e receba um diagn&oacute;stico completo, com acompanhamento m&eacute;dico especializado.</p>
-          <a href="index.html#agendar" class="btn btn-outline-light">Agendar consulta</a>
-        </div>
-        <div class="cta-final-photo">
-          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789171441/cta_home_npyf1k.png" alt="Dra. Daniele Murga">
-        </div>
-      </div>
-      <div class="cta-final-bar">
-        <span>Atendimento presencial &middot; Rio de Janeiro</span>
-      </div>
-    </div>
-  </section>
+  <div id="cta-final-placeholder"
+       data-titulo="Diagnóstico certo,&lt;br&gt;tratamento correto."
+       data-texto="Escuta atenta e acompanhamento médico contínuo, para tratar a causa e não só o sintoma."
+       data-botao="Agendar consulta"
+       data-link="index.html#agendar"
+       data-foto="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789171441/cta_home_npyf1k.png">
+  </div>
+  <script>
+    (function () {
+      var placeholder = document.getElementById('cta-final-placeholder');
+      var dados = {
+        titulo: placeholder.dataset.titulo,
+        texto: placeholder.dataset.texto,
+        botao: placeholder.dataset.botao,
+        link: placeholder.dataset.link,
+        foto: placeholder.dataset.foto
+      };
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'partials/cta-final.html', false);
+      try { xhr.send(null); } catch (erro) { /* silencioso: pagina segue sem CTA em vez de quebrar */ }
+      if (xhr.status === 200 || xhr.status === 0) {
+        placeholder.outerHTML = xhr.responseText;
+        document.getElementById('cta-final-titulo').innerHTML = dados.titulo;
+        document.getElementById('cta-final-texto').textContent = dados.texto;
+        document.getElementById('cta-final-botao').textContent = dados.botao;
+        document.getElementById('cta-final-botao').href = dados.link;
+        document.getElementById('cta-final-foto').src = dados.foto;
+      }
+    })();
+  </script>
 
   <div id="footer-placeholder"></div>
   <script>

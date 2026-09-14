@@ -1507,6 +1507,7 @@ body.page-home .hero-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-left: 24px;
 }
 
 .cta-final-content h2 {
@@ -1542,8 +1543,12 @@ body.page-home .hero-text {
   color: var(--color-espresso);
 }
 
-.cta-final-bar .container-home {
+.cta-final-bar .container {
   text-align: left;
+}
+
+.cta-final-bar span {
+  padding-left: 137px;
 }
 
 @media (min-width: 700px) {
@@ -1561,6 +1566,8 @@ body.page-home .hero-text {
   .cta-final-top {
     height: 420px;
     padding: 0;
+    display: flex;
+    align-items: center;
   }
 
   .cta-final-top-inner {
@@ -1571,10 +1578,7 @@ body.page-home .hero-text {
 
   .cta-final-content {
     max-width: 320px;
-  }
-
-  .cta-final-content h2 {
-    max-width: 320px;
+    padding-left: 48px;
   }
 
   .cta-final-content p {
