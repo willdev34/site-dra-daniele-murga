@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dermatologia Cl&iacute;nica | Dra. Daniele Murga</title>
   <meta name="description" content="Dermatologia cl&iacute;nica com a Dra. Daniele Murga: diagn&oacute;stico, escuta e acompanhamento m&eacute;dico para acne, melasma, ros&aacute;cea, queda capilar e outras condi&ccedil;&otilde;es da pele.">
+  <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/favicon_nevyte.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/favicon-16x16_kyygbx.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/favicon-32x32_kxkkxc.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/apple-touch-icon_1_zkpf9a.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/android-chrome-192x192_qhouih.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/android-chrome-512x512_zljkpy.png">
   <link rel="stylesheet" href="css/style.css?v=29">
 </head>
 <body>
@@ -121,12 +127,12 @@
   </section>
 
   <div id="cta-final-placeholder"
-       data-titulo="Diagnóstico certo,&lt;br&gt;tratamento correto."
-       data-texto="Escuta atenta e acompanhamento médico contínuo, para tratar a causa e não só o sintoma."
-       data-botao="Agendar consulta"
-       data-link="index.html#agendar"
-       data-foto="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789339680/cta_clinica_sanovg.jpg">
-  </div>
+     data-titulo="Diagnóstico certo,&lt;br&gt;tratamento correto."
+     data-texto="Escuta atenta e acompanhamento médico contínuo, para tratar a causa e não só o sintoma."
+     data-botao="Agendar consulta"
+     data-link="https://wa.me/5521988145834?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dra.%20Daniele%20e%20gostaria%20de%20agendar%20uma%20consulta."
+     data-foto="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789339680/cta_clinica_sanovg.jpg">
+</div>
   <script>
     (function () {
       var placeholder = document.getElementById('cta-final-placeholder');
@@ -146,7 +152,12 @@
         document.getElementById('cta-final-titulo').innerHTML = dados.titulo;
         document.getElementById('cta-final-texto').textContent = dados.texto;
         document.getElementById('cta-final-botao').textContent = dados.botao;
-        document.getElementById('cta-final-botao').href = dados.link;
+        var botaoCta = document.getElementById('cta-final-botao');
+        botaoCta.href = dados.link;
+        if (dados.link.indexOf('wa.me') !== -1) {
+          botaoCta.target = '_blank';
+          botaoCta.rel = 'noopener';
+        }
         document.getElementById('cta-final-foto').src = dados.foto;
       }
     })();

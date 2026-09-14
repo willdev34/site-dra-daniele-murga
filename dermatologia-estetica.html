@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dermatologia Est&eacute;tica | Dra. Daniele Murga</title>
   <meta name="description" content="Tratamentos de dermatologia est&eacute;tica com a Dra. Daniele Murga: preenchimento, toxina botul&iacute;nica, bioestimuladores, laser e mais, sempre a partir de uma avalia&ccedil;&atilde;o individual.">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/favicon-16x16_kyygbx.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/favicon-32x32_kxkkxc.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/apple-touch-icon_1_zkpf9a.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/android-chrome-192x192_qhouih.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/android-chrome-512x512_zljkpy.png"> 
   <link rel="stylesheet" href="css/style.css?v=38">
 </head>
 <body>
@@ -211,9 +216,12 @@
         document.getElementById('cta-final-titulo').innerHTML = dados.titulo;
         document.getElementById('cta-final-texto').textContent = dados.texto;
         document.getElementById('cta-final-botao').textContent = dados.botao;
-        document.getElementById('cta-final-botao').href = dados.link;
-        document.getElementById('cta-final-botao').target = '_blank';
-        document.getElementById('cta-final-botao').rel = 'noopener';
+        var botaoCta = document.getElementById('cta-final-botao');
+        botaoCta.href = dados.link;
+        if (dados.link.indexOf('wa.me') !== -1) {
+          botaoCta.target = '_blank';
+          botaoCta.rel = 'noopener';
+        }
         document.getElementById('cta-final-foto').src = dados.foto;
       }
     })();
