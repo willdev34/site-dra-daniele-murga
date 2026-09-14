@@ -32,7 +32,7 @@
           seu corpo e da sua sa&uacute;de como um todo.
         </p>
         <div class="hero-buttons">
-          <a href="#agendar" class="btn btn-primary">Agendar Consulta</a>
+          <a href="https://wa.me/5521988145834?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dra.%20Daniele%20e%20gostaria%20de%20agendar%20uma%20consulta." class="btn btn-primary" target="_blank" rel="noopener">Agendar Consulta</a>
           <a href="#sobre" class="btn btn-secondary">Conhe&ccedil;a a Dra. Daniele</a>
         </div>
       </div>
@@ -261,7 +261,7 @@
        data-titulo="Vamos cuidar de você?"
        data-texto="Agende uma consulta e descubra um plano de cuidado pensado para sua pele, seu corpo e sua saúde."
        data-botao="Agende uma Consulta"
-       data-link="index.html#agendar"
+       data-link="https://wa.me/5521988145834?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dra.%20Daniele%20e%20gostaria%20de%20agendar%20uma%20consulta."
        data-foto="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789171441/cta_home_npyf1k.png">
   </div>
   <script>
@@ -284,6 +284,8 @@
         document.getElementById('cta-final-texto').textContent = dados.texto;
         document.getElementById('cta-final-botao').textContent = dados.botao;
         document.getElementById('cta-final-botao').href = dados.link;
+        document.getElementById('cta-final-botao').target = '_blank';
+        document.getElementById('cta-final-botao').rel = 'noopener';
         document.getElementById('cta-final-foto').src = dados.foto;
       }
     })();

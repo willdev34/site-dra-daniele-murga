@@ -148,6 +148,16 @@
             <a href="https://wa.me/5521988145834?text=Ol%C3%A1%2C%20vi%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20Lifting%20N%C3%A3o%20Cir%C3%BArgico." class="featured-card-link" target="_blank" rel="noopener">Agendar avalia&ccedil;&atilde;o &rarr;</a>
           </div>
         </article>
+        <article class="featured-card">
+          <div class="featured-card-image">
+            <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789337227/lipedema_gcgta6.png" alt="Tratamento de lipedema pela Dra. Daniele Murga">
+          </div>
+          <div class="featured-card-body">
+            <h3>Lipedema</h3>
+            <p>Consulta ortomolecular, drenagem linfática e associação de tecnologias que visam reduzir a dor, o inchaço e o desconforto causados pelo acúmulo anormal de gordura.</p>
+            <a href="https://wa.me/5521988145834?text=Ol%C3%A1%2C%20vi%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20Lipedema." class="featured-card-link" target="_blank" rel="noopener">Agendar avaliação &rarr;</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -175,12 +185,12 @@
     </div>
   </section>
 
-    <div id="cta-final-placeholder"
+  <div id="cta-final-placeholder"
        data-titulo="Realce sua beleza&lt;br&gt;com segurança."
        data-texto="Cada procedimento começa com uma avaliação individual, pensada para o seu rosto e o seu corpo."
        data-botao="Agendar avaliação"
-       data-link="index.html#agendar"
-       data-foto="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789171441/cta_home_npyf1k.png">
+       data-link="https://wa.me/5521988145834?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dra.%20Daniele%20Murga%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20dermatologia%20est%C3%A9tica."
+       data-foto="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789342017/cta_estetica_v3hsvl.png">
   </div>
   <script>
     (function () {
@@ -202,6 +212,8 @@
         document.getElementById('cta-final-texto').textContent = dados.texto;
         document.getElementById('cta-final-botao').textContent = dados.botao;
         document.getElementById('cta-final-botao').href = dados.link;
+        document.getElementById('cta-final-botao').target = '_blank';
+        document.getElementById('cta-final-botao').rel = 'noopener';
         document.getElementById('cta-final-foto').src = dados.foto;
       }
     })();

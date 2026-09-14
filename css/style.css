@@ -2333,6 +2333,10 @@ body.page-home .hero-text {
   text-align: center;
 }
 
+.care-experience .lead-text-spaced {
+  margin-bottom: 48px;
+}
+
 /* ==========================================================================
    PAGINA INTERNA - RESULTADOS
    ========================================================================== */
