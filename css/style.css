@@ -557,7 +557,10 @@ body.lightbox-open {
 
 @media (max-width: 899px) {
   .badge-hero-home {
-    display: none;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
