@@ -115,7 +115,7 @@
   <section class="bio" id="experiencia">
     <div class="container bio-inner">
       <div class="bio-photo">
-        <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto/v1789358158/consultorio02_kliey7.png" alt="Sala de atendimento da cl&iacute;nica da Dra. Daniele Murga">
+        <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_700,dpr_auto/v1789358158/consultorio02_kliey7.png" alt="Sala de atendimento da cl&iacute;nica da Dra. Daniele Murga" loading="lazy">
       </div>
       <div class="bio-text">
         <span class="badge">A experi&ecirc;ncia come&ccedil;a antes</span>
@@ -136,22 +136,20 @@
       <h2 class="section-title section-title-center">Um ambiente feito<br>para receber voc&ecirc;.</h2>
 
       <div class="space-grid">
-        <div class="space-item space-item-recepcao space-video" id="space-video">
-          <div class="space-video-media">
-            <video src="https://res.cloudinary.com/do0uq7w4n/video/upload/v1789358219/clinica_cxhnaw.mp4" poster="https://res.cloudinary.com/do0uq7w4n/video/upload/so_auto/v1789358219/clinica_cxhnaw.jpg" playsinline preload="metadata"></video>
-          </div>
-          <button type="button" class="space-video-play-btn" id="space-video-trigger" aria-label="Reproduzir v&iacute;deo do espa&ccedil;o da cl&iacute;nica">
+        <button type="button" class="space-item space-item-recepcao space-video-trigger-card" id="space-video-trigger" aria-label="Reproduzir v&iacute;deo do espa&ccedil;o da cl&iacute;nica">
+          <img src="https://res.cloudinary.com/do0uq7w4n/video/upload/so_auto,f_auto,q_auto,w_800/v1789358219/clinica_cxhnaw.jpg" alt="Espa&ccedil;o da cl&iacute;nica" loading="lazy">
+          <span class="space-video-play-btn" aria-hidden="true">
             <svg width="22" height="24" viewBox="0 0 20 22" fill="currentColor"><path d="M0 0 L20 11 L0 22 Z"/></svg>
-          </button>
-        </div>
+          </span>
+        </button>
         <div class="space-item space-item-consultorio">
-          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto/v1789358192/consultorio01_s6bajf.png" alt="Consult&oacute;rio da cl&iacute;nica da Dra. Daniele Murga">
+          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_700,dpr_auto/v1789358192/consultorio01_s6bajf.png" alt="Consult&oacute;rio da cl&iacute;nica da Dra. Daniele Murga" loading="lazy">
         </div>
         <div class="space-item space-item-sala">
-          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto/v1789358158/consultorio02_kliey7.png" alt="Sala de atendimento da cl&iacute;nica da Dra. Daniele Murga">
+          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_700,dpr_auto/v1789358158/consultorio02_kliey7.png" alt="Sala de atendimento da cl&iacute;nica da Dra. Daniele Murga" loading="lazy">
         </div>
         <div class="space-item space-item-maca">
-          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto/v1789358149/consultorio03_g9fam3.png" alt="Sala de procedimentos est&eacute;ticos da cl&iacute;nica da Dra. Daniele Murga">
+          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_700,dpr_auto/v1789358149/consultorio03_g9fam3.png" alt="Sala de procedimentos est&eacute;ticos da cl&iacute;nica da Dra. Daniele Murga" loading="lazy">
         </div>
         <div class="space-item space-item-detalhe">
           <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto/v1789358666/spa_capa_jiiijf.png" alt="Ambiente de bem-estar da cl&iacute;nica da Dra. Daniele Murga">
@@ -258,7 +256,16 @@
       }
     })();
   </script>
-
+  <div class="lightbox" id="recepcao-lightbox">
+    <div class="lightbox-content lightbox-content--video">
+      <button type="button" class="lightbox-close" id="recepcao-lightbox-close" aria-label="Fechar">&times;</button>
+      <div class="lightbox-video" id="recepcao-lightbox-video"></div>
+      <div class="lightbox-body">
+        <span class="lightbox-meta">Sobre a Clínica</span>
+        <h3>Conheça nosso espaço</h3>
+      </div>
+    </div>
+  </div>
   <script src="js/script.js?v=29"></script>
 </body>
 </html>

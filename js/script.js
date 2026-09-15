@@ -75,23 +75,36 @@ initHeader();
 // play fica apenas visual (sem URL inventada); quando o arquivo for
 // definido, basta trocar a <img> por um elemento <video> com esse src
 // que a mesma logica de play/pause/overlay passa a funcionar.
-const spaceVideo = document.getElementById('space-video');
+const spaceVideoTrigger = document.getElementById('space-video-trigger');
+const recepcaoLightbox = document.getElementById('recepcao-lightbox');
 
-if (spaceVideo) {
-  const spaceVideoTrigger = document.getElementById('space-video-trigger');
-  const spaceVideoEl = spaceVideo.querySelector('video');
+if (spaceVideoTrigger && recepcaoLightbox) {
+  const recepcaoLightboxVideo = document.getElementById('recepcao-lightbox-video');
+  const recepcaoLightboxClose = document.getElementById('recepcao-lightbox-close');
+  const videoSrc = 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco/v1789358219/clinica_cxhnaw.mp4';
+  const posterSrc = 'https://res.cloudinary.com/do0uq7w4n/video/upload/so_auto,f_auto,q_auto,w_800/v1789358219/clinica_cxhnaw.jpg';
 
-  if (spaceVideoTrigger && spaceVideoEl) {
-    spaceVideoTrigger.addEventListener('click', () => {
-      spaceVideoEl.play();
-    });
-    spaceVideoEl.addEventListener('play', () => spaceVideo.classList.add('is-playing'));
-    spaceVideoEl.addEventListener('pause', () => spaceVideo.classList.remove('is-playing'));
-    spaceVideoEl.addEventListener('ended', () => spaceVideo.classList.remove('is-playing'));
-    spaceVideoEl.addEventListener('click', () => {
-      if (spaceVideoEl.paused) spaceVideoEl.play(); else spaceVideoEl.pause();
-    });
+  function abrirRecepcaoLightbox() {
+    recepcaoLightboxVideo.innerHTML = `<video src="${videoSrc}" poster="${posterSrc}" controls autoplay playsinline></video>`;
+    recepcaoLightbox.classList.add('is-active');
+    document.body.classList.add('lightbox-open');
+    recepcaoLightboxClose.focus();
   }
+
+  function fecharRecepcaoLightbox() {
+    recepcaoLightbox.classList.remove('is-active');
+    document.body.classList.remove('lightbox-open');
+    recepcaoLightboxVideo.innerHTML = '';
+  }
+
+  spaceVideoTrigger.addEventListener('click', abrirRecepcaoLightbox);
+  recepcaoLightboxClose.addEventListener('click', fecharRecepcaoLightbox);
+  recepcaoLightbox.addEventListener('click', (evento) => {
+    if (evento.target === recepcaoLightbox) fecharRecepcaoLightbox();
+  });
+  document.addEventListener('keydown', (evento) => {
+    if (evento.key === 'Escape' && recepcaoLightbox.classList.contains('is-active')) fecharRecepcaoLightbox();
+  });
 }
 
 // Atualiza o ano do copyright automaticamente
