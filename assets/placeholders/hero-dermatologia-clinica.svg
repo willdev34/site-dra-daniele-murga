@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 960" role="img" aria-labelledby="title">
+  <title id="title">Ilustração de cuidado em dermatologia clínica</title>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F4EF"/>
+      <stop offset="100%" stop-color="#E8DED3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="960" fill="url(#bgGrad)"/>
+  <rect x="40" y="40" width="720" height="880" rx="32" fill="none" stroke="#B8A99B" stroke-opacity="0.35" stroke-width="1.5"/>
+  <g fill="none" stroke="#302A27" stroke-opacity="0.4" stroke-width="2.5" stroke-linecap="round">
+    <circle cx="400" cy="440" r="130"/>
+    <line x1="400" y1="380" x2="400" y2="500"/>
+    <line x1="340" y1="440" x2="460" y2="440"/>
+  </g>
+  <circle cx="400" cy="440" r="10" fill="#B8A99B" fill-opacity="0.5"/>
+</svg>

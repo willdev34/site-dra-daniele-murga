@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 405 720" role="img" aria-labelledby="title">
+  <title id="title">Capa provisória de depoimento em vídeo</title>
+  <defs>
+    <linearGradient id="gv" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F4EF"/>
+      <stop offset="100%" stop-color="#E8DED3"/>
+    </linearGradient>
+  </defs>
+  <rect width="405" height="720" fill="url(#gv)"/>
+  <circle cx="202" cy="330" r="70" fill="none" stroke="#302A27" stroke-opacity="0.25" stroke-width="2"/>
+  <g stroke="#B8A99B" stroke-opacity="0.6" stroke-width="4" stroke-linecap="round">
+    <line x1="150" y1="520" x2="150" y2="560"/>
+    <line x1="175" y1="500" x2="175" y2="580"/>
+    <line x1="200" y1="480" x2="200" y2="600"/>
+    <line x1="225" y1="505" x2="225" y2="575"/>
+    <line x1="250" y1="525" x2="250" y2="555"/>
+  </g>
+</svg>

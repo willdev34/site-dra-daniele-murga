@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 860" role="img" aria-labelledby="title">
+  <title id="title">Ilustração de cuidado integrado</title>
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8DED3"/>
+      <stop offset="100%" stop-color="#B8A99B"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="860" fill="url(#bgGrad2)"/>
+  <g fill="none" stroke="#302A27" stroke-opacity="0.35" stroke-width="2.5">
+    <circle cx="290" cy="420" r="95"/>
+    <circle cx="400" cy="420" r="95"/>
+    <circle cx="345" cy="510" r="95"/>
+  </g>
+</svg>

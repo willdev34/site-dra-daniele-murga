@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title">
+  <title id="title">Cuidado</title>
+  <g fill="none" stroke="#302A27" stroke-opacity="0.7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 78 C 30 64, 18 52, 18 38 C 18 26, 27 18, 37 18 C 44 18, 50 22, 50 30 C 50 22, 56 18, 63 18 C 73 18, 82 26, 82 38 C 82 52, 70 64, 50 78 Z"/>
+  </g>
+</svg>

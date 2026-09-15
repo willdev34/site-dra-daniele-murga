@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title">
+  <title id="title">Ilustração representando o olhar e a filosofia de cuidado da Dra. Daniele</title>
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F4EF"/>
+      <stop offset="100%" stop-color="#E8DED3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg3)"/>
+  <g fill="none" stroke="#302A27" stroke-opacity="0.3" stroke-width="2">
+    <circle cx="400" cy="300" r="80"/>
+    <circle cx="400" cy="300" r="130"/>
+    <circle cx="400" cy="300" r="180"/>
+  </g>
+  <circle cx="400" cy="300" r="14" fill="#B8A99B" fill-opacity="0.6"/>
+</svg>

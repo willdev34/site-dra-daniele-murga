@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title">
+  <title id="title">Ilustração representando bioestimuladores de colágeno</title>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8DED3"/>
+      <stop offset="100%" stop-color="#F7F4EF"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <circle cx="400" cy="300" r="120" fill="none" stroke="#B8A99B" stroke-opacity="0.4" stroke-width="1.5"/>
+  <g stroke="#302A27" stroke-opacity="0.55" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M355 220 C 395 260, 395 260, 355 300 C 315 340, 315 340, 355 380 C 395 420, 395 420, 355 460"/>
+    <path d="M445 220 C 405 260, 405 260, 445 300 C 485 340, 485 340, 445 380 C 405 420, 405 420, 445 460"/>
+    <line x1="365" y1="240" x2="435" y2="240"/>
+    <line x1="365" y1="320" x2="435" y2="320"/>
+    <line x1="365" y1="400" x2="435" y2="400"/>
+  </g>
+</svg>

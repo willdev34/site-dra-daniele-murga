@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depoimentos de Pacientes | Dra. Daniele Murga</title>
+  <meta name="description" content="Experi&ecirc;ncias reais de pacientes da Dra. Daniele Murga, dermatologista em Campo Grande, Rio de Janeiro: avalia&ccedil;&otilde;es no Google e depoimentos em v&iacute;deo sobre dermatologia, dermatologia est&eacute;tica e medicina integrativa.">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/favicon-16x16_kyygbx.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/favicon-32x32_kxkkxc.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/apple-touch-icon_1_zkpf9a.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/android-chrome-192x192_qhouih.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/android-chrome-512x512_zljkpy.png">  
+  <link rel="stylesheet" href="css/style.css?v=29">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+  <script>
+    (function () {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'partials/header.html', false);
+      try { xhr.send(null); } catch (erro) { /* silencioso: pagina segue sem header em vez de quebrar */ }
+      if (xhr.status === 200 || xhr.status === 0) {
+        document.getElementById('header-placeholder').outerHTML = xhr.responseText;
+      }
+    })();
+  </script>
+
+  <section class="page-hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="badge">Experi&ecirc;ncias reais</span>
+        <h1>Quem passa por aqui tem<br>uma hist&oacute;ria para contar.</h1>
+        <p class="hero-text">
+          Mais do que resultados, cada paciente vive uma experi&ecirc;ncia &uacute;nica
+          de cuidado, acompanhamento e confian&ccedil;a.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/5521988145834?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dra.%20Daniele%20e%20gostaria%20de%20agendar%20uma%20consulta." class="btn btn-primary" target="_blank" rel="noopener">Agendar consulta</a>
+          <a href="sobre-dra-daniele.html" class="btn btn-secondary">Conhe&ccedil;a a Dra. Daniele</a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789352400/hero_depoimentos_tdvm0h.png" alt="Dra. Daniele Murga ao lado de equipamento de laser da cl&iacute;nica">
+      </div>
+    </div>
+  </section>
+
+  <section class="google-section" id="avaliacoes-google">
+    <div class="container">
+      <span class="badge badge-center">Avalia&ccedil;&otilde;es Google</span>
+      <h2 class="section-title section-title-center">O que nossos pacientes dizem</h2>
+      <p class="lead-text">A confian&ccedil;a constru&iacute;da ao longo do tempo tamb&eacute;m aparece nas experi&ecirc;ncias compartilhadas por quem j&aacute; passou pela cl&iacute;nica.</p>
+
+      <div class="google-stat">
+        <span class="google-stat-number">4,7</span>
+        <span class="google-stat-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="google-stat-count">202 avalia&ccedil;&otilde;es no <span class="google-review-source"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span></span>
+      </div>
+
+      <div class="google-marquee" id="google-marquee">
+        <div class="google-marquee-track" id="google-marquee-track"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-transition">
+    <div class="container">
+      <span class="badge badge-center">Depoimentos em v&iacute;deo</span>
+      <h2 class="section-title section-title-center">Experi&ecirc;ncias que merecem ser ouvidas</h2>
+      <p>Algumas hist&oacute;rias n&atilde;o cabem em poucas palavras. Por isso, reunimos relatos de pacientes que compartilharam sua experi&ecirc;ncia durante o tratamento.</p>
+    </div>
+  </section>
+
+  <section class="video-section" id="depoimentos-video">
+    <div class="container">
+      <div class="results-filters" id="video-filters" role="group" aria-label="Filtrar depoimentos por &aacute;rea"></div>
+
+      <div class="video-carousel-wrap">
+        <button type="button" class="video-nav-btn" id="video-prev" aria-label="Depoimento anterior">&larr;</button>
+        <div class="video-track" id="video-track" tabindex="0" aria-label="Carrossel de depoimentos em v&iacute;deo"></div>
+        <button type="button" class="video-nav-btn" id="video-next" aria-label="Pr&oacute;ximo depoimento">&rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-feature section-texture" id="destaque">
+    <div class="container video-feature-inner">
+      <button type="button" class="video-card-trigger video-feature-poster" id="feature-video-trigger" aria-label="Assistir depoimento em destaque">
+        <img src="https://res.cloudinary.com/do0uq7w4n/video/upload/so_auto/v1789355739/diagnostico_vxjczi.jpg" alt="Depoimento em v&iacute;deo em destaque">
+        <span class="video-play-btn" aria-hidden="true">
+          <svg width="20" height="22" viewBox="0 0 20 22" fill="currentColor"><path d="M0 0 L20 11 L0 22 Z"/></svg>
+        </span>
+      </button>
+      <div class="video-feature-text">
+        <span class="badge">Nota editorial</span>
+        <h2>Cada paciente tem uma hist&oacute;ria.<br>E todo tratamento come&ccedil;a por ouvi-la.</h2>
+        <p>Ao lado, um relato real sobre como o acompanhamento com a Dra. Daniele come&ccedil;a pela escuta e pela investiga&ccedil;&atilde;o cuidadosa de cada caso.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container-home">
+      <div class="cta-final-top">
+        <div class="cta-final-content">
+          <h2>Seu cuidado tamb&eacute;m<br>pode come&ccedil;ar aqui.</h2>
+          <p>Agende uma consulta e viva a mesma experi&ecirc;ncia de quem j&aacute; passou por aqui.</p>
+          <a href="https://wa.me/5521988145834?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dra.%20Daniele%20e%20gostaria%20de%20agendar%20uma%20consulta." class="btn btn-outline-light" target="_blank" rel="noopener">Agendar consulta</a>
+        </div>
+        <div class="cta-final-photo">
+          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789356529/cta_depoimentos_llpy1n.png" alt="Dra. Daniele Murga">
+        </div>
+      </div>
+      <div class="cta-final-bar">
+        <span>Atendimento presencial &middot; Rio de Janeiro</span>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    (function () {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'partials/footer.html', false);
+      try { xhr.send(null); } catch (erro) { /* silencioso: pagina segue sem footer em vez de quebrar */ }
+      if (xhr.status === 200 || xhr.status === 0) {
+        document.getElementById('footer-placeholder').outerHTML = xhr.responseText;
+      }
+    })();
+  </script>
+
+  <div class="lightbox" id="video-lightbox">
+    <div class="lightbox-content lightbox-content--video">
+      <button type="button" class="lightbox-close" id="video-lightbox-close" aria-label="Fechar">&times;</button>
+      <div class="lightbox-video" id="lightbox-video"></div>
+      <div class="lightbox-body">
+        <span class="lightbox-meta" id="video-lightbox-meta"></span>
+        <h3 id="video-lightbox-title"></h3>
+      </div>
+      <div class="lightbox-nav">
+        <button type="button" id="video-lightbox-prev">&larr; Anterior</button>
+        <button type="button" id="video-lightbox-next">Pr&oacute;ximo &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js?v=29"></script>
+</body>
+</html>

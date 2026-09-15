@@ -3,29 +3,315 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dra. Daniele Murga | Em breve</title>
-  <meta name="description" content="O novo site da Dra. Daniele Murga esta a caminho.">
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="css/style.css">
+  <title>Dra. Daniele Murga | Dermatologia, Nutrologia e Medicina Integrativa</title>
+  <meta name="description" content="Dermatologia Clinica e Estetica, Nutrologia e Medicina Integrativa com a Dra. Daniele Murga em Campo Grande, RJ. Cuidado com voce por inteiro, em todas as fases da vida.">
+  <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/favicon_nevyte.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/favicon-16x16_kyygbx.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/favicon-32x32_kxkkxc.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/apple-touch-icon_1_zkpf9a.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/android-chrome-192x192_qhouih.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789418625/android-chrome-512x512_zljkpy.png">
+  <link rel="stylesheet" href="css/style.css?v=57">
 </head>
-<body>
+<body class="page-home">
 
-  <main class="construction">
-    <div class="construction-inner">
-      <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788830487/logo_menu_jidopr.png" alt="Dra. Daniele Murga" class="construction-logo">
+  <div id="header-placeholder"></div>
+  <script>
+    (function () {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'partials/header.html', false);
+      try { xhr.send(null); } catch (erro) { /* silencioso: pagina segue sem header em vez de quebrar */ }
+      if (xhr.status === 200 || xhr.status === 0) {
+        document.getElementById('header-placeholder').outerHTML = xhr.responseText;
+      }
+    })();
+  </script>
 
-      <span class="badge">Dermatologia &middot; Estetica &middot; Cuidado</span>
+  <section class="hero">
+    <div class="container-home hero-inner">
+      <div class="hero-content">
+        <span class="badge badge-hero-home">Dermatologia Cl&iacute;nica &amp; Est&eacute;tica &middot; Medicina Integrativa</span>
+        <h1>Cuidado com voc&ecirc;,<br>em todas as fases da vida.</h1>
+        <p class="hero-text">
+          Dermatologia Cl&iacute;nica e Est&eacute;tica, e Medicina
+          Integrativa em um s&oacute; lugar &mdash; cuidando da sua pele, do
+          seu corpo e da sua sa&uacute;de como um todo.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/5521988145834?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dra.%20Daniele%20e%20gostaria%20de%20agendar%20uma%20consulta." class="btn btn-primary" target="_blank" rel="noopener">Agendar Consulta</a>
+          <a href="#sobre" class="btn btn-secondary">Conhe&ccedil;a a Dra. Daniele</a>
+        </div>
+      </div>
 
-      <h1>Algo novo est&aacute;<br>a caminho.</h1>
-
-      <p class="construction-text">
-        Estamos preparando uma nova experi&ecirc;ncia para voc&ecirc; conhecer
-        o trabalho da Dra. Daniele Murga. Volte em breve.
-      </p>
-
-      <a href="https://wa.me/5521988145834?text=Ol%C3%A1%2C%20Dra.%20Daniele%21%20Vi%20que%20o%20site%20est%C3%A1%20em%20constru%C3%A7%C3%A3o%2C%20gostaria%20de%20agendar%20uma%20consulta." class="btn btn-primary" target="_blank" rel="noopener">Fale pelo WhatsApp</a>
+      <div class="hero-photo">
+        <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788412300/hero-daniele_muzgtg.jpg" alt="Dra. Daniele Murga, dermatologista">
+        <span class="badge-float">CRM &middot; RQE</span>
+      </div>
     </div>
-  </main>
 
+    <div class="hero-credentials">
+      <div class="container credentials-inner">
+        <span>CRM + RQE Dermatologia</span>
+        <span>Atendimento Personalizado</span>
+        <span>Est&eacute;tica Natural</span>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="intro">
+    <div class="intro-photo">
+      <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788412749/intro-daniele_wxfpnn.jpg" alt="Dra. Daniele Murga em consulta">
+    </div>
+    <div class="intro-text">
+      <span class="badge">Uma nova forma de cuidar</span>
+      <h2>Voc&ecirc; n&atilde;o precisa parecer diferente.<br>Precisa se sentir bem, por inteiro.</h2>
+      <p>Cada pessoa possui uma hist&oacute;ria, uma rotina e caracter&iacute;sticas &uacute;nicas. Por isso, cada tratamento &eacute; pensado individualmente, respeitando sua identidade e buscando resultados naturais.</p>
+    </div>
+  </section>
+
+    <section class="treatments" id="tratamentos">
+    <div class="container-home">
+      <span class="badge badge-center">Como podemos cuidar da sua pele</span>
+      <h2 class="section-title">Tratamentos pensados<br>para voc&ecirc;.</h2>
+
+      <div class="treatments-columns">
+        <div class="treatment-block">
+          <span class="treatment-block-icon" aria-hidden="true">
+            <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788500593/icon-rejuvenescimento_grwuwa.png" alt="">
+          </span>
+          <div class="treatment-block-info">
+            <h3>Dermatologia Est&eacute;tica</h3>
+            <p>Preenchimento, toxina botul&iacute;nica, laser e outros procedimentos para realçar sua beleza.</p>
+          </div>
+          <a href="dermatologia-estetica.html" class="btn btn-primary treatment-block-link">Explorar &rarr;</a>
+        </div>
+
+        <div class="treatment-block">
+          <span class="treatment-block-icon" aria-hidden="true">
+            <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788500593/icon-saude-pele_ovcmnl.png" alt="">
+          </span>
+          <div class="treatment-block-info">
+            <h3>Dermatologia Cl&iacute;nica</h3>
+            <p>Acne, melasma, ros&aacute;cea e queda capilar, com diagn&oacute;stico e acompanhamento m&eacute;dico.</p>
+          </div>
+          <a href="medicina-clinica.html" class="btn btn-primary treatment-block-link">Explorar &rarr;</a>
+        </div>
+
+        <div class="treatment-block">
+          <span class="treatment-block-icon" aria-hidden="true">
+            <img src="assets/placeholders/icon-emagrecimento.svg" alt="">
+          </span>
+          <div class="treatment-block-info">
+            <h3>Medicina Integrativa</h3>
+            <p>Nutrologia, emagrecimento, reposi&ccedil;&atilde;o hormonal e cuidado com a sa&uacute;de al&eacute;m da pele.</p>
+          </div>
+          <a href="medicina-integrativa.html" class="btn btn-primary treatment-block-link">Explorar &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="bio" id="sobre">
+    <div class="container-home bio-inner">
+      <div class="bio-photo">
+        <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788411888/bio-daniele_vxtzha.jpg" alt="Dra. Daniele Murga">
+      </div>
+      <div class="bio-text">
+        <span class="badge">A Dra. Daniele</span>
+        <h2>Dra. Daniele Murga</h2>
+        <p>
+          A Dra. Daniele Murga &eacute; M&eacute;dica Dermatologista, formada em
+          Medicina e Dermatologia pela Universidade Federal Fluminense (UFF),
+          com forma&ccedil;&atilde;o em Nutrologia pela ABRAN e t&iacute;tulo de
+          especialista concedido pela Sociedade Brasileira de Dermatologia (SBD).
+          Atua com foco em Dermatologia Cl&iacute;nica, Est&eacute;tica e Medicina
+          Integrativa, oferecendo cuidados personalizados que unem ci&ecirc;ncia,
+          sa&uacute;de e bem-estar. Seu trabalho valoriza a beleza natural, o
+          equil&iacute;brio do corpo e o acolhimento de cada paciente, com
+          excel&ecirc;ncia t&eacute;cnica e olhar humano.
+        </p>
+        <a href="sobre-dra-daniele.html" class="btn btn-primary">Conhe&ccedil;a minha hist&oacute;ria</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="why">
+    <div class="container-home">
+      <span class="badge badge-center">Por que a Dra. Daniele?</span>
+      <h2 class="section-title section-title-center">
+        Conhecimento m&eacute;dico.<br>
+        Olhar individual.<br>
+        Resultados naturais.
+      </h2>
+
+      <div class="why-grid">
+        <div class="why-card why-card-precisao">
+          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789178877/precisao_home_oz86pe.png" alt="Sala de tratamento">
+          <div class="why-overlay">
+            <h3>Precis&atilde;o</h3>
+            <p>Avalia&ccedil;&atilde;o individualizada antes de qualquer protocolo.</p>
+          </div>
+        </div>
+
+        <div class="why-card why-card-naturalidade">
+          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789178877/naturalidade_home_oua3ws.png" alt="Resultado natural de pele">
+          <div class="why-overlay">
+            <h3>Naturalidade</h3>
+            <p>Procedimentos que respeitam seus tra&ccedil;os.</p>
+          </div>
+        </div>
+
+        <div class="why-card why-card-acompanhamento">
+          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789178877/acompanhamento_home_hu8qho.png" alt="Acompanhamento de tratamento">
+          <div class="why-overlay">
+            <h3>Acompanhamento</h3>
+            <p>Cuidado cont&iacute;nuo, n&atilde;o apenas uma consulta.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="testimonials">
+    <div class="container-home">
+      <h2 class="section-title section-title-center">Quem passa por aqui,<br>sente a diferença.</h2>
+
+      <div class="google-stat">
+        <span class="google-stat-number">4,7</span>
+        <span class="google-stat-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="google-stat-count">202 avalia&ccedil;&otilde;es no <span class="google-review-source"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span></span>
+      </div>
+
+      <div class="testimonial-featured">
+        <p class="testimonial-quote">&ldquo;Recentemente ela fez um excelente trabalho de revers&atilde;o de uma harmoniza&ccedil;&atilde;o mal feita que havia deformado parte do meu rosto. Gra&ccedil;as a todo o seu conhecimento, carinho e dedica&ccedil;&atilde;o, pude ter a minha autoestima elevada de volta.&rdquo;</p>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <span class="testimonial-author">Camila Gomes</span>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">&ldquo;N&atilde;o abro m&atilde;o do seu atendimento e a recomendo de olhos fechados para todos que buscam uma profissional competente, atenciosa e dedicada.&rdquo;</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="testimonial-author">Bruna Brand&atilde;o</span>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">&ldquo;Ela n&atilde;o fica inventando procedimentos ou indicando coisas desnecess&aacute;rias; ela realmente avalia cada caso e faz apenas o que &eacute; necess&aacute;rio e adequado para cada pessoa.&rdquo;</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="testimonial-author">Marceli Silva</span>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">&ldquo;Escuta ativamente o que relato, analisa os exames com aten&ccedil;&atilde;o para al&eacute;m do &oacute;bvio do tratamento, orienta de forma objetiva e humana. Recomendo com certeza.&rdquo;</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="testimonial-author">Isis Souza</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="results" id="resultados">
+    <div class="container-home">
+      <h2 class="section-title section-title-center">Resultados que<br>respeitam voc&ecirc;.</h2>
+
+      <div class="result-row">
+        <div class="result-photo">
+          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788405817/antes-depois-melasma_h8nguf.jpg" alt="Antes e depois - tratamento de melasma">
+          <span class="result-badge result-badge-left">Antes</span>
+          <span class="result-badge result-badge-right">Depois</span>
+        </div>
+        <div class="result-text">
+          <h3>Tratamento de melasma</h3>
+          <p>Um protocolo exclusivo que combinou laser para melasma, peeling qu&iacute;mico, antioxida&ccedil;&atilde;o e skincare personalizado.</p>
+        </div>
+      </div>
+
+      <div class="result-row">
+        <div class="result-photo result-photo-pair">
+          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788405549/antes-botox_h2y8q7.jpg" alt="Antes - botox masculino">
+          <img src="https://res.cloudinary.com/do0uq7w4n/image/upload/v1788405549/depois-botox_mdqsyp.jpg" alt="Depois - botox masculino">
+          <span class="result-badge result-badge-left">Antes</span>
+          <span class="result-badge result-badge-right">Depois</span>
+        </div>
+        <div class="result-text">
+          <h3>Botox masculino: naturalidade, express&atilde;o e rejuvenescimento.</h3>
+          <p>Rugas profundas na testa e ao redor dos olhos podem deixar o rosto com um aspecto mais cansado e envelhecido. Neste caso, o tratamento com toxina botul&iacute;nica suavizou significativamente as linhas de express&atilde;o, mantendo a naturalidade dos movimentos e a identidade do paciente.</p>
+          <span class="result-disclaimer">*Resultados individuais podem variar.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="diary" id="conteudos">
+    <div class="container-home">
+      <span class="badge badge-center">Di&aacute;rio da Pele</span>
+      <h2 class="section-title section-title-center">Informa&ccedil;&atilde;o tamb&eacute;m &eacute; cuidado.</h2>
+
+      <div class="diary-carousel">
+        <div class="diary-track" id="diary-track"></div>
+        <div class="diary-carousel-controls">
+          <button type="button" class="diary-nav diary-nav-prev" id="diary-prev" aria-label="Ver vídeos anteriores">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button type="button" class="diary-nav diary-nav-next" id="diary-next" aria-label="Ver mais vídeos">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="cta-final-placeholder"
+       data-titulo="Vamos cuidar de você?"
+       data-texto="Agende uma consulta e descubra um plano de cuidado pensado para sua pele, seu corpo e sua saúde."
+       data-botao="Agende uma Consulta"
+       data-link="https://wa.me/5521988145834?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dra.%20Daniele%20e%20gostaria%20de%20agendar%20uma%20consulta."
+       data-foto="https://res.cloudinary.com/do0uq7w4n/image/upload/v1789171441/cta_home_npyf1k.png">
+  </div>
+  <script>
+    (function () {
+      var placeholder = document.getElementById('cta-final-placeholder');
+      var dados = {
+        titulo: placeholder.dataset.titulo,
+        texto: placeholder.dataset.texto,
+        botao: placeholder.dataset.botao,
+        link: placeholder.dataset.link,
+        foto: placeholder.dataset.foto
+      };
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'partials/cta-final.html', false);
+      try { xhr.send(null); } catch (erro) { /* silencioso: pagina segue sem CTA em vez de quebrar */ }
+      if (xhr.status === 200 || xhr.status === 0) {
+        placeholder.outerHTML = xhr.responseText;
+        document.getElementById('cta-final-titulo').innerHTML = dados.titulo;
+        document.getElementById('cta-final-texto').textContent = dados.texto;
+        document.getElementById('cta-final-botao').textContent = dados.botao;
+        var botaoCta = document.getElementById('cta-final-botao');
+        botaoCta.href = dados.link;
+        if (dados.link.indexOf('wa.me') !== -1) {
+          botaoCta.target = '_blank';
+          botaoCta.rel = 'noopener';
+        }
+        document.getElementById('cta-final-foto').src = dados.foto;
+      }
+    })();
+  </script>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    (function () {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'partials/footer.html', false);
+      try { xhr.send(null); } catch (erro) { /* silencioso: pagina segue sem footer em vez de quebrar */ }
+      if (xhr.status === 200 || xhr.status === 0) {
+        document.getElementById('footer-placeholder').outerHTML = xhr.responseText;
+      }
+    })();
+  </script>
+
+  <script src="js/script.js?v=33"></script>
 </body>
 </html>

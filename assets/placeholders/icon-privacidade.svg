@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title">
+  <title id="title">Privacidade</title>
+  <g fill="none" stroke="#302A27" stroke-opacity="0.7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 20 L78 32 V52 C78 68, 66 80, 50 84 C34 80, 22 68, 22 52 V32 Z"/>
+    <path d="M40 52 L47 59 L61 43"/>
+  </g>
+</svg>

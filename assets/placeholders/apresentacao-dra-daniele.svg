@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 860" role="img" aria-labelledby="title">
+  <title id="title">Ilustração provisória da Dra. Daniele Murga em atendimento</title>
+  <defs>
+    <linearGradient id="bg2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8DED3"/>
+      <stop offset="100%" stop-color="#F7F4EF"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="860" fill="url(#bg2)"/>
+  <ellipse cx="380" cy="330" rx="92" ry="106" fill="#302A27" fill-opacity="0.14"/>
+  <path d="M235 700 C 235 545, 295 455, 380 455 C 465 455, 530 545, 545 700 L545 760 L225 760 Z" fill="#302A27" fill-opacity="0.14"/>
+</svg>

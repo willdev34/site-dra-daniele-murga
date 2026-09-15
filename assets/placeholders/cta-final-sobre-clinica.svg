@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 860" role="img" aria-labelledby="title">
+  <title id="title">Ilustração provisória do espaço da clínica</title>
+  <defs>
+    <linearGradient id="bgC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8DED3"/>
+      <stop offset="100%" stop-color="#B8A99B"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="860" fill="url(#bgC)"/>
+  <g fill="none" stroke="#302A27" stroke-opacity="0.3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M230 560 L230 310 A120 120 0 0 1 470 310 L470 560"/>
+    <line x1="230" y1="560" x2="470" y2="560"/>
+  </g>
+</svg>
