@@ -143,7 +143,7 @@ const RESULTADOS_CASOS = [
     title: 'Tratamento de melasma',
     description: 'Protocolo que combinou laser para melasma, peeling químico, antioxidação e skincare personalizado.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1788405817/antes-depois-melasma_h8nguf.jpg'
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1788405817/antes-depois-melasma_h8nguf.jpg'
   },
   {
     id: 'melasma-2',
@@ -153,7 +153,7 @@ const RESULTADOS_CASOS = [
     description: 'A toxina botulínica é uma aliada quando o objetivo é harmonizar e equilibrar a expressão facial, suavizando pequenas diferenças entre os lados do rosto, associada aqui a um protocolo para tratamento do melasma. O procedimento é rápido, seguro e com resultados naturais, sempre realizado após uma avaliação individual.',
     disclaimer: '*Resultados individuais podem variar.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789403399/botox_melasma_gc9oan.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789403399/botox_melasma_gc9oan.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para tratamento de melasma.'
   },
   {
@@ -164,7 +164,7 @@ const RESULTADOS_CASOS = [
     description: 'O melasma não tem cura, mas sem tratamento o quadro tende a se agravar. Com um protocolo que combina suplementação oral, tópicos e tecnologias, é possível manter as manchas amenizadas e sob controle.',
     disclaimer: '*Resultados individuais podem variar.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789404217/melasma02_tdckaj.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789404217/melasma02_tdckaj.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para tratamento de melasma.'
   },
   {
@@ -175,8 +175,8 @@ const RESULTADOS_CASOS = [
     description: 'Rugas profundas na testa e ao redor dos olhos podem deixar o rosto com um aspecto mais cansado e envelhecido. O tratamento com toxina botulínica suavizou significativamente as linhas de expressão, mantendo a naturalidade dos movimentos e a identidade do paciente.',
     disclaimer: '*Resultados individuais podem variar.',
     type: 'pair',
-    imageBefore: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1788405549/antes-botox_h2y8q7.jpg',
-    imageAfter: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1788405549/depois-botox_mdqsyp.jpg'
+    imageBefore: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1788405549/antes-botox_h2y8q7.jpg',
+    imageAfter: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1788405549/depois-botox_mdqsyp.jpg'
   },
   {
     id: 'botox-masculino-2',
@@ -186,7 +186,7 @@ const RESULTADOS_CASOS = [
     description: 'Mesmo paciente, com suavização das linhas de expressão mantendo a naturalidade dos movimentos e a identidade do rosto.',
     disclaimer: '*Resultados individuais podem variar.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789401603/botox_masculino_hh0vq4.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789401603/botox_masculino_hh0vq4.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Toxina Botulínica.'
   },
   {
@@ -196,7 +196,7 @@ const RESULTADOS_CASOS = [
     title: 'Bigode Chinês',
     description: 'Com um protocolo personalizado de preenchimento com ácido hialurônico e ultrassom microfocado, foi possível suavizar o bigode chinês, devolvendo leveza à expressão e mais harmonia ao sorriso. O objetivo não é mudar traços, mas amenizar marcas de expressão e trazer um aspecto mais descansado e natural.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789351332/bigode_chines_zsvqah.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789351332/bigode_chines_zsvqah.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Bigode Chinês.'
   },
   {
@@ -206,7 +206,7 @@ const RESULTADOS_CASOS = [
     title: 'Estrias',
     description: 'O laser fracionado cria microcanais controlados na pele, ativando o processo natural de cicatrização e estimulando a produção de novas fibras de colágeno e elastina. O resultado é uma pele mais uniforme, com textura renovada e estrias visivelmente mais finas, já a partir de uma única sessão.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789351233/estria_zbxurc.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789351233/estria_zbxurc.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para tratamento de Estrias.'
   },
   {
@@ -217,7 +217,7 @@ const RESULTADOS_CASOS = [
     description: 'O endolaser é uma excelente opção para o tratamento da flacidez de pescoço, estimulando a produção de colágeno e trazendo mais firmeza à pele de forma progressiva.',
     disclaimer: '*Resultados individuais podem variar.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789404599/Endolaser_inbs5h.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789404599/Endolaser_inbs5h.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Endolaser.'
   },
   {
@@ -227,7 +227,7 @@ const RESULTADOS_CASOS = [
     title: 'Rugas de Acordeão',
     description: 'As rugas de acordeão são linhas verticais que surgem nas bochechas pela perda de colágeno, flacidez da pele e repetição de expressões faciais como o sorriso. Neste caso, a paciente havia perdido peso recentemente, e a associação de preenchimento com ácido hialurônico, toxina botulínica em pontos avançados e medicina regenerativa com PDRN trouxe esse resultado.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789349486/Rugas_acordeao_qkjmsz.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789349486/Rugas_acordeao_qkjmsz.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Rugas de Acordeão.'
   },
   {
@@ -237,7 +237,7 @@ const RESULTADOS_CASOS = [
     title: 'Ultrassom Micro e Macrofocado',
     description: 'A associação de técnicas costuma trazer resultados mais completos: neste caso, o ultrassom micro e macrofocado foi combinado com preenchimento do sulco nasogeniano, resultando numa melhora expressiva da flacidez e do contorno facial.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789350854/macrofocado_kvqu48.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789350854/macrofocado_kvqu48.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Ultrassom Micro e Macrofocado.'
   },
   {
@@ -247,7 +247,7 @@ const RESULTADOS_CASOS = [
     title: 'Rejuvenescimento Facial',
     description: 'Alguns resultados vão além da estética e carregam confiança e autoestima. Esta paciente veio de outro estado especialmente para realizar o tratamento, e o objetivo nunca foi transformar, mas valorizar sua beleza individual, respeitando suas características e promovendo um resultado elegante e natural.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789351706/rejuvenecimento_facial_sv7k3x.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789351706/rejuvenecimento_facial_sv7k3x.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Rejuvenescimento Facial.'
   },
   {
@@ -257,7 +257,7 @@ const RESULTADOS_CASOS = [
     title: 'Rejuvenescimento Facial (Caso 2)',
     description: 'Nesta mesma paciente, observamos suavização das rugas ao redor dos olhos e das linhas de marionete, melhora da firmeza e sustentação facial, e uma textura de pele mais uniforme e viçosa. Um rejuvenescimento natural, sem perder a identidade e a expressão do rosto.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789400793/rejuvenecimento_facial02_cnu8gm.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789400793/rejuvenecimento_facial02_cnu8gm.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Rejuvenescimento Facial.'
   },
   {
@@ -268,7 +268,7 @@ const RESULTADOS_CASOS = [
     description: 'Um plano personalizado, respeitando a anatomia e as necessidades da paciente, trouxe pele mais uniforme e iluminada, suavização das linhas de expressão e um contorno facial mais equilibrado. O objetivo não é transformar, mas valorizar e devolver vitalidade à pele, sem exageros ou perda da naturalidade.',
     disclaimer: '*Resultados individuais podem variar.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789402978/rejuvenecimento_facial03_yyxxz2.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789402978/rejuvenecimento_facial03_yyxxz2.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Rejuvenescimento Facial.'
   },
   {
@@ -278,8 +278,8 @@ const RESULTADOS_CASOS = [
     title: 'Projeção de Mento e Definição de Mandíbula',
     description: 'O mento tem papel fundamental na harmonia facial, servindo como ponto de referência tanto de perfil quanto de frente. Uma boa projeção define o contorno da mandíbula, evita o aspecto de papada e mantém o equilíbrio entre os terços do rosto. A projeção adequada foi trabalhada para trazer mais definição e harmonia ao perfil da paciente.',
     type: 'pair',
-    imageBefore: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789343118/mandibula_antes_nlpp6y.png',
-    imageAfter: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789343128/mandibula_depois_rh5bni.png',
+    imageBefore: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789343118/mandibula_antes_nlpp6y.png',
+    imageAfter: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789343128/mandibula_depois_rh5bni.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Projeção de Mento e Definição de Mandíbula.'
   },
   {
@@ -289,7 +289,7 @@ const RESULTADOS_CASOS = [
     title: 'Dermatocalaze (Região dos Olhos)',
     description: 'A dermatocalaze, também conhecida como blefarocalaze, é o excesso de pele e gordura nas pálpebras superiores, que ocorre quando a região ao redor dos olhos perde firmeza e elasticidade. A associação de ultrassom microfocado com toxina botulínica trouxe uma melhora significativa no contorno dos olhos.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789351151/Dermatocalaze_tsrzuz.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789351151/Dermatocalaze_tsrzuz.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Dermatocalaze na região dos olhos.'
   },
   {
@@ -299,7 +299,7 @@ const RESULTADOS_CASOS = [
     title: 'Rugas de Marionete',
     description: 'Com um protocolo individualizado de ácido hialurônico e ultrassom microfocado, foi possível suavizar o bigode chinês e as rugas de marionete, promovendo uma expressão mais leve e um sorriso mais harmônico. O foco é preservar a naturalidade, reduzindo marcas de expressão e trazendo um aspecto mais descansado e equilibrado.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789343725/rugas_marionete_ankltj.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789343725/rugas_marionete_ankltj.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Rugas de Marionete.'
   },
   {
@@ -309,7 +309,7 @@ const RESULTADOS_CASOS = [
     title: 'Preenchimento Labial',
     description: 'O preenchimento labial com ácido hialurônico devolve volume e contorno de forma gradual, respeitando a proporção natural do rosto. O objetivo é realçar os lábios com um resultado harmônico, sem perder a expressão natural da paciente.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789350739/preenchimento_labial_sdx3va.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789350739/preenchimento_labial_sdx3va.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Preenchimento Labial.'
   },
   {
@@ -319,7 +319,7 @@ const RESULTADOS_CASOS = [
     title: 'Botox Feminino',
     description: 'A proposta aqui não era transformar, mas devolver o que o tempo suavemente levou. Foram associados botox full face, preenchimento em pontos estratégicos para reposição de volume e um protocolo personalizado para melhora da textura da pele, incluindo skincare individualizado e suplementação oral. O resultado foi uma aparência mais descansada e harmoniosa, respeitando a identidade da paciente.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789351998/botox_feminino_jkjxbl.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789351998/botox_feminino_jkjxbl.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Botox Feminino.'
   },
   {
@@ -330,7 +330,7 @@ const RESULTADOS_CASOS = [
     description: 'Apenas com botox full face foi possível um resultado global de rejuvenescimento e harmonização facial, suavizando as rugas ao redor dos olhos, melhorando a definição do contorno mandibular e promovendo um efeito de lifting sutil, sem perder a naturalidade da expressão.',
     disclaimer: '*Resultados individuais podem variar.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789402438/botox_feminino03_fxakgc.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789402438/botox_feminino03_fxakgc.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Toxina Botulínica.'
   },
   {
@@ -340,7 +340,7 @@ const RESULTADOS_CASOS = [
     title: 'Papada',
     description: 'Resultado de um protocolo voltado para a redução da papada, trazendo mais definição ao contorno do rosto e do pescoço. Cada caso é avaliado individualmente para indicar a abordagem mais adequada.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789350436/papada_hx9fiz.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789350436/papada_hx9fiz.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para tratamento de Papada.'
   },
   {
@@ -350,7 +350,7 @@ const RESULTADOS_CASOS = [
     title: 'Protocolo Combinado de Rejuvenescimento',
     description: 'Esta paciente apresentava eritema difuso, textura irregular e sulcos mais evidentes. Após um protocolo individualizado, combinando toxina botulínica, ultrassom microfocado com radiofrequência e preenchimento facial em pontos estratégicos de sustentação, o resultado trouxe tom de pele mais uniforme, redução do rubor e suavização das linhas, sempre respeitando a naturalidade.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1789350199/rejuvenescimento_facial_fx0of1.png',
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789350199/rejuvenescimento_facial_fx0of1.png',
     whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Protocolo Combinado de Rejuvenescimento.'
   }
 ];
@@ -542,8 +542,11 @@ if (resultsGrid) {
 // igual para todos), sem precisar subir uma imagem extra para cada um.
 function posterDoVideoCloudinary(videoUrl) {
   if (!videoUrl) return null;
+  // Remove qualquer transformacao de video ja presente (ex.: q_auto:eco,w_720
+  // usado no <video> real) antes de inserir a transformacao propria do poster,
+  // para nunca encadear os dois parametros na mesma imagem.
   return videoUrl
-    .replace('/video/upload/', '/video/upload/so_auto/')
+    .replace(/\/video\/upload\/(?:(?!v\d+\/)[a-z0-9_:.,-]+\/)?/i, '/video/upload/so_auto,f_auto,q_auto,w_800/')
     .replace(/\.mp4$/i, '.jpg');
 }
 
@@ -553,42 +556,42 @@ const DIARY_POSTS = [
     title: 'Rosácea',
     description: 'A escolha do protetor solar certo faz toda a diferença no tratamento da rosácea.',
     instagramUrl: 'https://www.instagram.com/reel/DT3hQrFjnVF/',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183539/rosacea_home_pndxz0.mp4'
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789183539/rosacea_home_pndxz0.mp4'
   },
   {
     id: 'mounjaro',
     title: 'Mounjaro',
     description: 'Como funciona, quando é indicado e por que o acompanhamento médico é essencial durante o uso.',
     instagramUrl: 'https://www.instagram.com/reel/DQmk45TjuC1/',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183690/mounjaro_home_gyctrn.mp4'
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789183690/mounjaro_home_gyctrn.mp4'
   },
   {
     id: 'melasma',
     title: 'Melasma',
     description: 'Manchas que exigem tratamento contínuo e proteção diária para não retornar.',
     instagramUrl: 'https://www.instagram.com/reel/DOhOQ7SDh-3/',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183880/melasma_home_kxcbi5.mp4'
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789183880/melasma_home_kxcbi5.mp4'
   },
   {
     id: 'protetor-solar',
     title: 'Protetor solar',
     description: 'Como escolher a proteção ideal para cada tipo de pele.',
     instagramUrl: 'https://www.instagram.com/reel/DMusWB7xsGt/',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789183971/protetor_solar_home_bsahow.mp4'
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789183971/protetor_solar_home_bsahow.mp4'
   },
   {
     id: 'queda-capilar',
     title: 'Queda Capilar',
     description: 'Entenda as causas mais comuns e quando buscar avaliação médica.',
     instagramUrl: 'https://www.instagram.com/p/DOWRq6gDpWi/',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789184117/queda_capilar_home_ps8tjj.mp4'
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789184117/queda_capilar_home_ps8tjj.mp4'
   },
   {
     id: 'preenchimento-facial',
     title: 'Preenchimento facial',
     description: 'Naturalidade e equilíbrio para valorizar seus traços.',
     instagramUrl: 'https://www.instagram.com/p/DOJwTjoEmGB/',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789184185/preenchimento_facial_home_kd7pue.mp4'
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789184185/preenchimento_facial_home_kd7pue.mp4'
   }
 ];
 
@@ -881,88 +884,88 @@ const INSTAGRAM_TESTEMUNHOS = [
     name: '',
     category: 'Estética',
     treatment: 'Melasma',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789353520/rosilene_melasma_incq4c.mp4',
-    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/v1789353520/rosilene_melasma_incq4c.mp4')
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789353520/rosilene_melasma_incq4c.mp4',
+    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789353520/rosilene_melasma_incq4c.mp4')
   },
   {
     id: 'protocolo-emagrecimento-1',
     name: '',
     category: 'Medicina Integrativa',
     treatment: 'Protocolo de Emagrecimento',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789353723/luciana_protocolo_emagrecimento_owegqi.mp4',
-    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/v1789353723/luciana_protocolo_emagrecimento_owegqi.mp4')
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789353723/luciana_protocolo_emagrecimento_owegqi.mp4',
+    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789353723/luciana_protocolo_emagrecimento_owegqi.mp4')
   },
   {
     id: 'tratamento-nodulos',
     name: '',
     category: 'Dermatologia',
     treatment: 'Tratamento de Nódulos',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789353994/tratamento_nodulo_rfwwxg.mp4',
-    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/v1789353994/tratamento_nodulo_rfwwxg.mp4')
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789353994/tratamento_nodulo_rfwwxg.mp4',
+    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789353994/tratamento_nodulo_rfwwxg.mp4')
   },
   {
     id: 'protocolo-mounjaro',
     name: '',
     category: 'Medicina Integrativa',
     treatment: 'Protocolo Mounjaro',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789354246/protocolo_mounjaro_gg8kda.mp4',
-    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/v1789354246/protocolo_mounjaro_gg8kda.mp4')
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789354246/protocolo_mounjaro_gg8kda.mp4',
+    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789354246/protocolo_mounjaro_gg8kda.mp4')
   },
   {
     id: 'diagnostico-esclerodermia-sistemica',
     name: '',
     category: 'Dermatologia',
     treatment: 'Diagnóstico de Esclerodermia Sistêmica',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789354558/diagnostico_esclerodermia_sistemica_ixpvnd.mp4',
-    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/v1789354558/diagnostico_esclerodermia_sistemica_ixpvnd.mp4')
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789354558/diagnostico_esclerodermia_sistemica_ixpvnd.mp4',
+    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789354558/diagnostico_esclerodermia_sistemica_ixpvnd.mp4')
   },
   {
     id: 'tratamento-integrativo',
     name: '',
     category: 'Medicina Integrativa',
     treatment: 'Tratamento Integrativo',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789354992/tratamento_integrativo_htd2nl.mp4',
-    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/v1789354992/tratamento_integrativo_htd2nl.mp4')
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789354992/tratamento_integrativo_htd2nl.mp4',
+    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789354992/tratamento_integrativo_htd2nl.mp4')
   },
   {
     id: 'melasma-2',
     name: '',
     category: 'Estética',
     treatment: 'Melasma',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789355104/melasma_evh34w.mp4',
-    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/v1789355104/melasma_evh34w.mp4')
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789355104/melasma_evh34w.mp4',
+    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789355104/melasma_evh34w.mp4')
   },
   {
     id: 'manchas-cicatrizes-acne',
     name: '',
     category: 'Estética',
     treatment: 'Manchas e Cicatrizes de Acne',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789355245/manchas_cicatrizes_Acne_pvnv0l.mp4',
-    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/v1789355245/manchas_cicatrizes_Acne_pvnv0l.mp4')
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789355245/manchas_cicatrizes_Acne_pvnv0l.mp4',
+    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789355245/manchas_cicatrizes_Acne_pvnv0l.mp4')
   },
   {
     id: 'estrias',
     name: '',
     category: 'Estética',
     treatment: 'Estrias',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789355825/estrias_tq1vla.mp4',
-    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/v1789355825/estrias_tq1vla.mp4')
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789355825/estrias_tq1vla.mp4',
+    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789355825/estrias_tq1vla.mp4')
   },
   {
     id: 'queloide-laser',
     name: '',
     category: 'Laser',
     treatment: 'Quelóide a Laser',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789355980/queloide_laser_hteutz.mp4',
-    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/v1789355980/queloide_laser_hteutz.mp4')
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789355980/queloide_laser_hteutz.mp4',
+    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789355980/queloide_laser_hteutz.mp4')
   },
   {
     id: 'protocolo-emagrecimento-2',
     name: '',
     category: 'Medicina Integrativa',
     treatment: 'Protocolo de Emagrecimento',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789356143/protocoloco_emagrecimento_ytxbqg.mp4',
-    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/v1789356143/protocoloco_emagrecimento_ytxbqg.mp4')
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789356143/protocoloco_emagrecimento_ytxbqg.mp4',
+    poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789356143/protocoloco_emagrecimento_ytxbqg.mp4')
   }
 ];
 
@@ -974,8 +977,8 @@ const NOTA_EDITORIAL_VIDEO = {
   name: '',
   category: 'Nota editorial',
   treatment: '',
-  video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/v1789355739/diagnostico_vxjczi.mp4',
-  poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/v1789355739/diagnostico_vxjczi.mp4')
+  video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789355739/diagnostico_vxjczi.mp4',
+  poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789355739/diagnostico_vxjczi.mp4')
 };
 
 const PLAY_ICON_SVG = '<svg width="20" height="22" viewBox="0 0 20 22" fill="currentColor"><path d="M0 0 L20 11 L0 22 Z"/></svg>';
