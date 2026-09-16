@@ -554,12 +554,20 @@ body.lightbox-open {
   border-radius: 999px;
 }
 
+.badge-linebreak {
+  display: none;
+}
+
 @media (max-width: 899px) {
   .badge-hero-home {
     display: block;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .badge-linebreak {
+    display: block;
   }
 }
 
@@ -580,6 +588,18 @@ body.lightbox-open {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+}
+
+@media (max-width: 899px) {
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: max-content;
+    gap: 16px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
 }
 
 .hero-photo {
@@ -752,6 +772,16 @@ body.page-home .hero-text {
   margin-bottom: 20px;
 }
 
+.intro-title-break {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .intro-title-break {
+    display: block;
+  }
+}
+
 .intro-text p {
   font-family: var(--font-body);
   font-weight: 400;
@@ -763,6 +793,12 @@ body.page-home .hero-text {
 
 /* ---- Ajustes exclusivos da Home (medicina-integrativa.html
    reaproveita .intro / .intro-photo / .intro-text sem estas regras) ---- */
+@media (max-width: 899px) {
+  body.page-home .intro {
+    margin-top: 0;
+  }
+}
+
 @media (min-width: 900px) {
   body.page-home .intro {
     margin-top: 136px;
@@ -1500,7 +1536,6 @@ body.page-home .hero-text {
   border-radius: 999px;
   background-color: var(--color-ivory);
   color: var(--color-espresso);
-  box-shadow: 0 8px 20px rgba(48, 42, 39, 0.12);
   cursor: pointer;
   transition: background-color 0.2s ease, opacity 0.2s ease;
 }
@@ -1514,11 +1549,6 @@ body.page-home .hero-text {
   cursor: default;
   pointer-events: none;
 }
-
-
-
-
-
 
 /* ==========================================================================
    CTA FINAL
@@ -1536,10 +1566,28 @@ body.page-home .hero-text {
   padding: 140px 0 160px;
 }
 
+@media (max-width: 899px) {
+  .cta-final {
+    padding: 64px 0 32px;
+  }
+}
+
 .cta-final-top {
   position: relative;
   background-color: var(--color-espresso);
   padding: 40px 0;
+}
+
+@media (max-width: 899px) {
+  .cta-final-top {
+    border-radius: 24px 24px 0 0;
+    overflow: hidden;
+  }
+
+  .cta-final-bar {
+    border-radius: 0 0 24px 24px;
+    overflow: hidden;
+  }
 }
 
 .cta-final-top-inner {
@@ -1574,7 +1622,7 @@ body.page-home .hero-text {
 
 .cta-final-photo img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
   border-radius: 24px;
@@ -1811,6 +1859,13 @@ body.page-home .hero-text {
   justify-content: center;
   gap: 6px 16px;
   text-align: center;
+}
+
+@media (max-width: 899px) {
+  .footer-bottom {
+    padding-top: 32px;
+    gap: 10px 16px;
+  }
 }
 
 .footer-copyright {
