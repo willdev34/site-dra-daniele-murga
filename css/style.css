@@ -898,6 +898,7 @@ body.page-home .hero-text {
     align-items: center;
     gap: 32px;
     padding: 28px 32px;
+    min-height: 132px;
   }
 
   .treatment-block-icon {
@@ -924,7 +925,7 @@ body.page-home .hero-text {
   }
 
   .treatment-block-info p {
-    max-width: 260px;
+    max-width: 380px;
     margin: 0;
   }
 
