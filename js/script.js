@@ -253,12 +253,13 @@ const RESULTADOS_CASOS = [
   {
     id: 'rejuvenescimento-facial-2',
     category: 'Rejuvenescimento',
-    procedure: 'Associação de tratamentos',
+    procedure: 'Toxina Botulínica Full Face',
     title: 'Rejuvenescimento Facial (Caso 2)',
-    description: 'Nesta mesma paciente, observamos suavização das rugas ao redor dos olhos e das linhas de marionete, melhora da firmeza e sustentação facial, e uma textura de pele mais uniforme e viçosa. Um rejuvenescimento natural, sem perder a identidade e a expressão do rosto.',
+    description: 'A toxina botulínica full face trabalha vários músculos responsáveis pelas rugas dinâmicas e pelo envelhecimento facial. Neste caso, houve melhora significativa das rugas peri orbitárias e do bravo, garantindo um olhar mais aberto, contorno facial e suavização das rugas do sorriso.',
+    disclaimer: '*Resultados individuais podem variar.',
     type: 'combined',
-    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/f_auto,q_auto,w_800,dpr_auto/v1789400793/rejuvenecimento_facial02_cnu8gm.png',
-    whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Rejuvenescimento Facial.'
+    image: 'https://res.cloudinary.com/do0uq7w4n/image/upload/v1790024519/rejuvenecimento_facial04_vgneln.png',
+    whatsappMessage: 'Olá, vi o site da Dra. Daniele e gostaria de agendar uma avaliação para Toxina Botulínica.'
   },
   {
     id: 'rejuvenescimento-facial-3',
@@ -570,7 +571,7 @@ const DIARY_POSTS = [
     title: 'Melasma',
     description: 'Manchas que exigem tratamento contínuo e proteção diária para não retornar.',
     instagramUrl: 'https://www.instagram.com/reel/DOhOQ7SDh-3/',
-    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789183880/melasma_home_kxcbi5.mp4'
+    video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1790028110/melasma_009_cf5e8q.mp4'
   },
   {
     id: 'protetor-solar',
@@ -955,7 +956,7 @@ const INSTAGRAM_TESTEMUNHOS = [
     id: 'queloide-laser',
     name: '',
     category: 'Laser',
-    treatment: 'Quelóide a Laser',
+    treatment: 'Tratamento de Quelóide a Laser',
     video: 'https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789355980/queloide_laser_hteutz.mp4',
     poster: posterDoVideoCloudinary('https://res.cloudinary.com/do0uq7w4n/video/upload/q_auto:eco,w_720/v1789355980/queloide_laser_hteutz.mp4')
   },
